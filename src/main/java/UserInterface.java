@@ -19,48 +19,12 @@ public class UserInterface {
 
             switch (command[0]) {
                 case "go" ->{
-                    switch ((command[1])) {
-                        case "north", "n" -> {
-                            boolean goingNorth = adventure.goNorth();
-                            if (goingNorth) {
-                                System.out.println("going north");
-                                System.out.println(adventure.getCurrentRoom());
-                            } else  {
-                                System.out.println("You can't go that way!");
-                            }
-                        }
-
-                        case "south", "s" -> {
-                            boolean goingSouth = adventure.goSouth();
-                            if (goingSouth) {
-                                System.out.println("going south");
-                                System.out.println(adventure.getCurrentRoom());
-                            } else {
-                                System.out.println("You can't go that way!");
-                            }
-                        }
-
-                        case "east", "e" -> {
-                            boolean goingEast = adventure.goEast();
-                            if (goingEast) {
-                                System.out.println("going east");
-                                System.out.println(adventure.getCurrentRoom());
-                            } else {
-                                System.out.println("You can't go that way!");
-                            }
-                        }
-
-                        case "west", "w" -> {
-                            boolean goingWest = adventure.goWest();
-                            if (goingWest) {
-                                System.out.println("going west");
-                                System.out.println(adventure.getCurrentRoom());
-                            } else {
-                                System.out.println("You can't go that way!");
-                            }
-                        }
+                    boolean goingInDirection = adventure.go(command[1]);
+                    if(goingInDirection) {
+                        System.out.println(adventure.getCurrentRoom());
+                    } else {
+                        System.out.println("You can't go that way!");
                     }
-
                 }
                 case "take" -> {
                     boolean itemTaken = adventure.getPlayer().takeItem(command[1]);

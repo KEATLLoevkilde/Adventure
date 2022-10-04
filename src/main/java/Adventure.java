@@ -27,21 +27,8 @@ public class Adventure {
         return player.printInventory();
     }
 
-    //Go methods
-    public boolean goNorth(){
-        return player.goNorth();
-    }
-
-    public boolean goSouth(){
-        return player.goSouth();
-    }
-
-    public boolean goEast(){
-        return player.goEast();
-    }
-
-    public boolean goWest(){
-        return player.goWest();
+    public boolean go(String direction){
+        return player.go(direction);
     }
 
     // TODO: 04-10-2022 Take-methods

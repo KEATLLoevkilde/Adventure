@@ -19,40 +19,36 @@ public class Player {
         this.currentRoom = newCurrentRoom;
     }
 
-    public boolean goNorth(){
-        if (currentRoom.getNorth() != null) {
-            setCurrentRoom(currentRoom.getNorth());
-            return true;
-        } else {
-            return false;
+    public boolean go(String direction){
+        boolean goingInDirection = false;
+        Room newCurrentRoom = null;
+        switch (direction){
+            case "north", "n"-> {
+                if(currentRoom.getNorth() != null){
+                    newCurrentRoom = currentRoom.getNorth();
+                }
+            }
+            case "south", "s" -> {
+                if(currentRoom.getSouth() != null){
+                    newCurrentRoom = currentRoom.getSouth();
+                }
+            }
+            case "east", "e" -> {
+                if(currentRoom.getEast() != null){
+                    newCurrentRoom = currentRoom.getEast();
+                }
+            }
+            case "west", "w" -> {
+                if(currentRoom.getWest() != null){
+                    newCurrentRoom = currentRoom.getWest();
+                }
+            }
         }
-    }
-
-    public boolean goSouth(){
-        if (currentRoom.getSouth() != null) {
-            setCurrentRoom(currentRoom.getSouth());
-            return true;
-        } else {
-            return false;
+        if(newCurrentRoom != null){
+            setCurrentRoom(newCurrentRoom);
+            goingInDirection = true;
         }
-    }
-
-    public boolean goEast(){
-        if (currentRoom.getEast() != null) {
-            setCurrentRoom(currentRoom.getEast());
-            return true;
-        } else {
-            return false;
-        }
-    }
-
-    public boolean goWest(){
-        if (currentRoom.getWest() != null) {
-            setCurrentRoom(currentRoom.getWest());
-            return true;
-        } else {
-            return false;
-        }
+        return goingInDirection;
     }
 
     //Item metoder
