@@ -3,10 +3,14 @@ import java.util.ArrayList;
 public class Player {
     private Room currentRoom;
     private ArrayList<Item> inventory;
+    private int health;
+    private String healthDescription;
 
     public Player(){
         currentRoom = new Room(null, null);
         inventory = new ArrayList<>();
+        this.health = 100;
+        this.healthDescription = printHealthDescription();
     }
 
     public Room getCurrentRoom() {
@@ -49,6 +53,23 @@ public class Player {
         return goingInDirection;
     }
 
+    public String printHealthDescription(){
+        String str = "";
+        if (health > 0 && health <= 25){
+            str = "Your health is low. Eat food or medicine to improove it.";
+        } else if (health <= 50) {
+            str = "You healt is okay, but avoid fighting right now.";
+        } else if (health <= 75) {
+            str = "You are in good health, but be carefull when you fight.";
+        } else if (health > 75) {
+            str = "You are in great health";
+        }
+        return str;
+    }
+
+    public String printPlayerHealth(){
+        return "Player health:\n" + health + " - " + healthDescription;
+    }
     public void addItemToInventory(Item item){
         inventory.add(item);
     }
@@ -104,4 +125,5 @@ public class Player {
         }
         return dropItem;
     }
+
 }

@@ -45,9 +45,8 @@ public class UserInterface {
                 }
 
                 case "inventory", "inv" -> System.out.println(adventure.printInventory());
-
+                case "health" -> System.out.println(adventure.printPlayerHealth());
                 case "look" -> System.out.println(adventure.getCurrentRoom());
-
                 case "help" -> System.out.println("""
                                                 
                                                 COMMANDS:
@@ -60,7 +59,9 @@ public class UserInterface {
                                                     
                                                 Drop: Takes an item from the player inventory and puts it in the room.                                                    
                                                     
-                                                Inventory (inv): Display the contents of the player inventory.                                                    
+                                                Inventory (inv): Display the contents of the player inventory. 
+                                                
+                                                Health: Display player health.                                                   
                                                  
                                                 Exit: Ends the game.                                                  
                                                 

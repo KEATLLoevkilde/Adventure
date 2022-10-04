@@ -19,6 +19,10 @@ public class Adventure {
         return player.printInventory();
     }
 
+    public String printPlayerHealth(){
+        return player.printPlayerHealth();
+    }
+
     public boolean go(String direction){
         return player.go(direction);
     }
