@@ -23,7 +23,7 @@ public class Adventure {
         return player.getCurrentRoom();
     }
 
-    public ArrayList<Item> printInventory(){
+    public String printInventory(){
         return player.printInventory();
     }
 

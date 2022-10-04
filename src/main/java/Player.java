@@ -64,8 +64,16 @@ public class Player {
         return null;
     }
 
-    public ArrayList<Item> printInventory() {
-        return inventory;
+    public String printInventory() {
+        String str = "Inventory: \n";
+            if(!inventory.isEmpty()){
+                for (Item i: inventory) {
+                    str += i.getDescription() + '\n';
+                }
+            } else {
+                str += "Inventory is empty.";
+            }
+            return str;
     }
 
     public void removeItemFromInventory(Item item){
