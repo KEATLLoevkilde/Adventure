@@ -31,7 +31,12 @@ public class Adventure {
         return player.go(direction);
     }
 
-    // TODO: 04-10-2022 Take-methods
-    // TODO: 04-10-2022 Drop-methods
+    public boolean takeItem(String itemName){
+        return player.takeItem(itemName);
+    }
+
+    public boolean dropItem(String itemName){
+        return player.dropItem(itemName);
+    }
 
 }

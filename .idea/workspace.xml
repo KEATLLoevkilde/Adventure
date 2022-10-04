@@ -4,10 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="41b819ed-f6c7-4518-a389-ca201f89dcb4" name="Changes" comment="Delopgave 2&#10;refactor getCurrentRoom &amp; printInventory to Adventure.java">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="41b819ed-f6c7-4518-a389-ca201f89dcb4" name="Changes" comment="Delopgave 2&#10;Changed go- methods to one go-method.">
       <change beforePath="$PROJECT_DIR$/src/main/java/Adventure.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Adventure.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Player.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/UserInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/UserInterface.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -46,7 +44,7 @@
       <workItem from="1664539611205" duration="44000" />
       <workItem from="1664539677652" duration="797000" />
       <workItem from="1664778512989" duration="7262000" />
-      <workItem from="1664865974001" duration="1884000" />
+      <workItem from="1664865974001" duration="2288000" />
     </task>
     <task id="LOCAL-00001" summary="Delopgave 2&#10;fixed deleteItemFromRoom() and deleteItemFromInventory()">
       <created>1664475782748</created>
@@ -76,7 +74,14 @@
       <option name="project" value="LOCAL" />
       <updated>1664866484416</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Delopgave 2&#10;Changed go- methods to one go-method.">
+      <created>1664867988121</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1664867988121</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -99,6 +104,7 @@
     <MESSAGE value="Delopgave 2&#10;added takeItem() and dropItem() to Player.java" />
     <MESSAGE value="Delopgave 2&#10;refactor go()- metoderne" />
     <MESSAGE value="Delopgave 2&#10;refactor getCurrentRoom &amp; printInventory to Adventure.java" />
-    <option name="LAST_COMMIT_MESSAGE" value="Delopgave 2&#10;refactor getCurrentRoom &amp; printInventory to Adventure.java" />
+    <MESSAGE value="Delopgave 2&#10;Changed go- methods to one go-method." />
+    <option name="LAST_COMMIT_MESSAGE" value="Delopgave 2&#10;Changed go- methods to one go-method." />
   </component>
 </project>

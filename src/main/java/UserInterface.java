@@ -27,7 +27,7 @@ public class UserInterface {
                     }
                 }
                 case "take" -> {
-                    boolean itemTaken = adventure.getPlayer().takeItem(command[1]);
+                    boolean itemTaken = adventure.takeItem(command[1]);
                     if (itemTaken) {
                         System.out.println("You've taken " + command[1]);
                      } else {
@@ -36,7 +36,7 @@ public class UserInterface {
                 }
 
                 case "drop" -> {
-                    boolean itemDropped = adventure.getPlayer().dropItem(command[1]);
+                    boolean itemDropped = adventure.dropItem(command[1]);
                     if (itemDropped){
                         System.out.println("you dropped " + command[1]);
                     }else {
@@ -47,6 +47,7 @@ public class UserInterface {
                 case "inventory", "inv" -> System.out.println(adventure.printInventory());
 
                 case "look" -> System.out.println(adventure.getCurrentRoom());
+                // TODO: 04-10-2022 Better Help
                 case "help" -> System.out.println("""
                                                 
                                                 COMMANDS:

@@ -41,6 +41,7 @@ public class Map {
 
     }
 
+    // TODO: 04-10-2022 Add items to every room
     public void addItemsToRoom(Room room, String itemName){
         room.addItem(new Item(itemName));
     }
