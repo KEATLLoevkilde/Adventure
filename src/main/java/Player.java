@@ -4,13 +4,11 @@ public class Player {
     private Room currentRoom;
     private ArrayList<Item> inventory;
 
-
     public Player(){
         currentRoom = new Room(null, null);
-        inventory = new ArrayList<Item>();
+        inventory = new ArrayList<>();
     }
 
-    //Room metoder
     public Room getCurrentRoom() {
         return currentRoom;
     }
@@ -51,27 +49,27 @@ public class Player {
         return goingInDirection;
     }
 
-    //Item metoder
     public void addItemToInventory(Item item){
         inventory.add(item);
     }
 
-    public Item searchItemInInventory(String item){
+    public Item searchItemInInventory(String itemName){
         for (Item s: inventory) {
-            if(s.getName().toLowerCase().equals(item))
+            if(s.getName().toLowerCase().equals(itemName))
                 return s;
         }
         return null;
     }
 
     public String printInventory() {
-        String str = "Inventory: ";
-            if(!inventory.isEmpty()){
+        String str = "";
+            if(inventory.isEmpty()){
+                str += "Inventory is empty.";
+            } else {
+                str += "Inventory:";
                 for (Item i: inventory) {
                     str += '\n' + i.getDescription();
                 }
-            } else {
-                str += "\nInventory is empty.";
             }
             return str;
     }

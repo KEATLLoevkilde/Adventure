@@ -7,10 +7,6 @@ public class Item {
         this.description = description;
     }
 
-    public Item(Item source){
-        this.name = source.name;
-    }
-
     public String getName() {
         return name;
     }

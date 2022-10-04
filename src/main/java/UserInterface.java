@@ -8,7 +8,7 @@ public class UserInterface {
         sc = new Scanner(System.in);
     }
     public void start(){
-        System.out.println(adventure.getPlayer().getCurrentRoom());
+        System.out.println(adventure.getCurrentRoom());
         handleInput();
     }
     public void handleInput(){
@@ -47,28 +47,22 @@ public class UserInterface {
                 case "inventory", "inv" -> System.out.println(adventure.printInventory());
 
                 case "look" -> System.out.println(adventure.getCurrentRoom());
-                // TODO: 04-10-2022 Better Help
+
                 case "help" -> System.out.println("""
                                                 
                                                 COMMANDS:
-                                                Go:
-                                                    Will let you go in the following directions if possible:
+                                                Go: Will let you go in the following direction if possible:
                                                     north, south, east, west (or: n, s, e, w )
                                                                                             
-                                                Look:
-                                                    Display the contents of the room if possible.
+                                                Look: Display the contents of the room if possible.                                                    
                                                     
-                                                Take:
-                                                    Takes an item from the room and puts it in the player inventory.
+                                                Take: Takes an item from the room and puts it in the player inventory.                                                    
                                                     
-                                                Drop:
-                                                    Takes an item from the player inventory and puts it in the room.
+                                                Drop: Takes an item from the player inventory and puts it in the room.                                                    
                                                     
-                                                Inventory (inv):
-                                                    Display the contents of the player inventory.
+                                                Inventory (inv): Display the contents of the player inventory.                                                    
                                                  
-                                                Exit:
-                                                    Ends the game.
+                                                Exit: Ends the game.                                                  
                                                 
                                                 """);
 

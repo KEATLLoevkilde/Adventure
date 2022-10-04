@@ -3,10 +3,10 @@ import java.util.ArrayList;
 public class Room {
     private String name;
     private String description;
-    private Room north = null;
-    private Room south = null;
-    private Room east = null;
-    private Room west = null;
+    private Room north;
+    private Room south;
+    private Room east;
+    private Room west;
     private ArrayList<Item> items;
 
     public Room(String name, String description){
@@ -20,14 +20,6 @@ public class Room {
     }
 
     //Gettere
-    public String getName() {
-        return name;
-    }
-
-    public String getDescription() {
-        return description;
-    }
-
     public Room getNorth() {
         return north;
     }
@@ -88,12 +80,12 @@ public class Room {
         String str = "";
         str += "You are in the " + name + '\n';
         str += description;
-        if(!items.isEmpty()){
+        if(items.isEmpty()){
+            str += "\nNothing else of interest in here.";
+        } else {
             for (Item i: items) {
                 str += "\nThere is " + i.getDescription();
             }
-        } else {
-            str += "\nNothing else of interest in here.";
         }
         return str;
     }

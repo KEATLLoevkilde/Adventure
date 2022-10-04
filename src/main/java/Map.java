@@ -9,10 +9,6 @@ public class Map {
     private Room room8 = null;
     private Room room9 = null;
 
-    public Room getRoom1() {
-        return room1;
-    }
-
     public void createMap(){
         room1 = new Room("Library", "Lots of books");
         room2 = new Room("Office 1", "A pleasant smell of coffee");
@@ -21,7 +17,7 @@ public class Map {
         room5 = new Room("Machine Room", "Noisy, but cool!");
         room6 = new Room("Office 2", "A silent programmer sitting in the corner");
         room7 = new Room("Yard", "Birds are singing");
-        room8 = new Room("Entrance Hall", "Wide and empty");
+        room8 = new Room("Entrance Hall", "Wide and empty. Exept for an umbrella rack.");
         room9 = new Room("Reception", "Reception desk. No one here.");
 
         setDirection(room1, null, room4, room2, null);
@@ -43,6 +39,10 @@ public class Map {
         addItemsToRoom(room7, "Cup", "A paper cup.");
         addItemsToRoom(room8, "Umbrella", "An umbrella.");
         addItemsToRoom(room9, "Ballpen", "A black plastic ballpen.");
+    }
+
+    public Room getRoom1() {
+        return room1;
     }
 
     public void addItemsToRoom(Room room, String itemName, String description){
