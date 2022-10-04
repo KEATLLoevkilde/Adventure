@@ -53,10 +53,15 @@ public class Player {
         return goingInDirection;
     }
 
-    // TODO: 04-10-2022 setHealth
-//    public void setHealth(Item item) {
-//        this.health = item.getHealth;
-//    }
+    public void setHealth(Item item) {
+        if(item instanceof Food food){
+            this.health = health += ((Food) item).getHealthPoint();
+        }
+        if (health > 100){
+            health = 100;
+        }
+        healthDescription = printHealthDescription();
+    }
 
     public String printHealthDescription(){
         String str = "";
@@ -136,6 +141,7 @@ public class Player {
         if(itemRequired == null){
             return ReturnMessage.COULD_NOT_BE_FOUND;
         } else if(itemRequired instanceof Food food){
+            setHealth(itemRequired);
             removeItemFromInventory(itemRequired);
             return ReturnMessage.EATEN;
         } else {

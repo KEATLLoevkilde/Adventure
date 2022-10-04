@@ -41,6 +41,8 @@ public class Map {
         addItemToRoom(room9, "Ballpen", "A black plastic ballpen.");
 
         addFoodToRoom(room1, "Apple", "A red delicious apple", 50);
+        addFoodToRoom(room9, "Poison", "A bottle of poison", -30);
+        addFoodToRoom(room2, "Poison", "A bottle of poison", -30);
     }
 
     public Room getRoom1() {
