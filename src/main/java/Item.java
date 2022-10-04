@@ -1,9 +1,10 @@
 public class Item {
     private String name;
-    // TODO: 04-10-2022 add Item description
+    private String description;
 
-    public Item(String name){
+    public Item(String name, String description){
         this.name = name;
+        this.description = description;
     }
 
     public Item(Item source){
@@ -14,7 +15,11 @@ public class Item {
         return name;
     }
 
+    public String getDescription() {
+        return description;
+    }
+
     public String toString(){
-        return name;
+        return description;
     }
 }

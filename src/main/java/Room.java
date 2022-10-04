@@ -68,7 +68,7 @@ public class Room {
 
     public Item searchItem(String item){
         for (Item s: items) {
-            if(s.getName().equals(item))
+            if(s.getName().toLowerCase().equals(item))
                 return s;
         }
         return null;
@@ -85,6 +85,16 @@ public class Room {
     }
 
     public String toString() {
-        return "You are in the " + name + "\n" + description + "\n" + "You see: " + items;
+        String str = "";
+        str += "You are in the " + name + '\n';
+        str += description + '\n';
+        if(!items.isEmpty()){
+            for (Item i: items) {
+                str += "There is " + i.getDescription() + '\n';
+            }
+        } else {
+            str += "Nothing else of interest in here.";
+        }
+        return str;
     }
 }

@@ -58,7 +58,7 @@ public class Player {
 
     public Item searchItemInInventory(String item){
         for (Item s: inventory) {
-            if(s.getName().equals(item))
+            if(s.getName().toLowerCase().equals(item))
                 return s;
         }
         return null;
