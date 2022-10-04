@@ -45,6 +45,14 @@ public class UserInterface {
                 }
 
                 case "inventory", "inv" -> System.out.println(adventure.printInventory());
+                case "eat" -> {
+                    ReturnMessage result = adventure.eatItem(command[1]);
+                    switch (result){
+                        case COULD_NOT_BE_FOUND -> System.out.println(command[1] + " is not in your inventory.");
+                        case EATEN -> System.out.println(command[1] + " eaten");
+                        case CAN_NOT_BE_EATEN -> System.out.println(command[1] + " can not be eaten");
+                    }
+                }
                 case "health" -> System.out.println(adventure.printPlayerHealth());
                 case "look" -> System.out.println(adventure.getCurrentRoom());
                 case "help" -> System.out.println("""

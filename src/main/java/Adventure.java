@@ -34,5 +34,8 @@ public class Adventure {
     public boolean dropItem(String itemName){
         return player.dropItem(itemName);
     }
+    public ReturnMessage eatItem(String itemName){
+        return player.eatItem(itemName);
+    }
 
 }

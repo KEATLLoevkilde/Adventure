@@ -131,4 +131,16 @@ public class Player {
         return dropItem;
     }
 
+    public ReturnMessage eatItem(String itemName){
+        Item itemRequired = searchItemInInventory(itemName);
+        if(itemRequired == null){
+            return ReturnMessage.COULD_NOT_BE_FOUND;
+        } else if(itemRequired instanceof Food food){
+            removeItemFromInventory(itemRequired);
+            return ReturnMessage.EATEN;
+        } else {
+            return ReturnMessage.CAN_NOT_BE_EATEN;
+        }
+    }
+
 }
