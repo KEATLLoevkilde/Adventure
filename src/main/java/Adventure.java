@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 public class Adventure {
     private Map map;
     private Player player;
@@ -17,6 +19,15 @@ public class Adventure {
         return player;
     }
 
+    public Room getCurrentRoom(){
+        return player.getCurrentRoom();
+    }
+
+    public ArrayList<Item> printInventory(){
+        return player.printInventory();
+    }
+
+    //Go methods
     public boolean goNorth(){
         return player.goNorth();
     }
@@ -32,5 +43,8 @@ public class Adventure {
     public boolean goWest(){
         return player.goWest();
     }
+
+    // TODO: 04-10-2022 Take-methods
+    // TODO: 04-10-2022 Drop-methods
 
 }

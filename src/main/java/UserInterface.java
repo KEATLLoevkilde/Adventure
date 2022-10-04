@@ -24,7 +24,7 @@ public class UserInterface {
                             boolean goingNorth = adventure.goNorth();
                             if (goingNorth) {
                                 System.out.println("going north");
-                                System.out.println(adventure.getPlayer().getCurrentRoom());
+                                System.out.println(adventure.getCurrentRoom());
                             } else  {
                                 System.out.println("You can't go that way!");
                             }
@@ -34,7 +34,7 @@ public class UserInterface {
                             boolean goingSouth = adventure.goSouth();
                             if (goingSouth) {
                                 System.out.println("going south");
-                                System.out.println(adventure.getPlayer().getCurrentRoom());
+                                System.out.println(adventure.getCurrentRoom());
                             } else {
                                 System.out.println("You can't go that way!");
                             }
@@ -44,7 +44,7 @@ public class UserInterface {
                             boolean goingEast = adventure.goEast();
                             if (goingEast) {
                                 System.out.println("going east");
-                                System.out.println(adventure.getPlayer().getCurrentRoom());
+                                System.out.println(adventure.getCurrentRoom());
                             } else {
                                 System.out.println("You can't go that way!");
                             }
@@ -54,8 +54,8 @@ public class UserInterface {
                             boolean goingWest = adventure.goWest();
                             if (goingWest) {
                                 System.out.println("going west");
-                                System.out.println(adventure.getPlayer().getCurrentRoom());
-                            } else if (adventure.getPlayer().getCurrentRoom().getWest() == null) {
+                                System.out.println(adventure.getCurrentRoom());
+                            } else {
                                 System.out.println("You can't go that way!");
                             }
                         }
@@ -80,9 +80,9 @@ public class UserInterface {
                     }
                 }
 
-                case "inventory", "inv" -> System.out.println(adventure.getPlayer().printInventory());
+                case "inventory", "inv" -> System.out.println(adventure.printInventory());
 
-                case "look" -> System.out.println(adventure.getPlayer().getCurrentRoom());
+                case "look" -> System.out.println(adventure.getCurrentRoom());
                 case "help" -> System.out.println("""
                                                 
                                                 COMMANDS:
