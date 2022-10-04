@@ -87,13 +87,13 @@ public class Room {
     public String toString() {
         String str = "";
         str += "You are in the " + name + '\n';
-        str += description + '\n';
+        str += description;
         if(!items.isEmpty()){
             for (Item i: items) {
-                str += "There is " + i.getDescription() + '\n';
+                str += "\nThere is " + i.getDescription();
             }
         } else {
-            str += "Nothing else of interest in here.";
+            str += "\nNothing else of interest in here.";
         }
         return str;
     }

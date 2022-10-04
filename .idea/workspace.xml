@@ -4,12 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="41b819ed-f6c7-4518-a389-ca201f89dcb4" name="Changes" comment="Delopgave 2&#10;added takeItem &amp; dropItem to Adventure.java">
+    <list default="true" id="41b819ed-f6c7-4518-a389-ca201f89dcb4" name="Changes" comment="Delopgave 2&#10;Better printInventory in Player.java">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Item.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Item.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Map.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Map.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Player.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Room.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Room.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/UserInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/UserInterface.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,7 +46,7 @@
       <workItem from="1664539611205" duration="44000" />
       <workItem from="1664539677652" duration="797000" />
       <workItem from="1664778512989" duration="7262000" />
-      <workItem from="1664865974001" duration="5411000" />
+      <workItem from="1664865974001" duration="6810000" />
     </task>
     <task id="LOCAL-00001" summary="Delopgave 2&#10;fixed deleteItemFromRoom() and deleteItemFromInventory()">
       <created>1664475782748</created>
@@ -91,7 +90,21 @@
       <option name="project" value="LOCAL" />
       <updated>1664868616242</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Delopgave 2&#10;Better toString in Room.java">
+      <created>1664871448449</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1664871448449</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Delopgave 2&#10;Better printInventory in Player.java">
+      <created>1664871697096</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1664871697096</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -116,6 +129,8 @@
     <MESSAGE value="Delopgave 2&#10;refactor getCurrentRoom &amp; printInventory to Adventure.java" />
     <MESSAGE value="Delopgave 2&#10;Changed go- methods to one go-method." />
     <MESSAGE value="Delopgave 2&#10;added takeItem &amp; dropItem to Adventure.java" />
-    <option name="LAST_COMMIT_MESSAGE" value="Delopgave 2&#10;added takeItem &amp; dropItem to Adventure.java" />
+    <MESSAGE value="Delopgave 2&#10;Better toString in Room.java" />
+    <MESSAGE value="Delopgave 2&#10;Better printInventory in Player.java" />
+    <option name="LAST_COMMIT_MESSAGE" value="Delopgave 2&#10;Better printInventory in Player.java" />
   </component>
 </project>

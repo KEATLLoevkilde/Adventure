@@ -65,13 +65,13 @@ public class Player {
     }
 
     public String printInventory() {
-        String str = "Inventory: \n";
+        String str = "Inventory: ";
             if(!inventory.isEmpty()){
                 for (Item i: inventory) {
-                    str += i.getDescription() + '\n';
+                    str += '\n' + i.getDescription();
                 }
             } else {
-                str += "Inventory is empty.";
+                str += "\nInventory is empty.";
             }
             return str;
     }

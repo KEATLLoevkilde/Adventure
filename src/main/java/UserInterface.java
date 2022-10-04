@@ -13,7 +13,7 @@ public class UserInterface {
     }
     public void handleInput(){
         while (true) {
-            System.out.println("What do you want to do?");
+            System.out.println("\nWhat do you want to do?");
             String action = sc.nextLine().toLowerCase();
             String[] command = action.split(" ");
 
@@ -29,7 +29,7 @@ public class UserInterface {
                 case "take" -> {
                     boolean itemTaken = adventure.takeItem(command[1]);
                     if (itemTaken) {
-                        System.out.println("You've taken " + command[1]);
+                        System.out.println("You've taken the " + command[1]);
                      } else {
                         System.out.println(command[1] + " couldn't be found in this room");
                     }
@@ -38,7 +38,7 @@ public class UserInterface {
                 case "drop" -> {
                     boolean itemDropped = adventure.dropItem(command[1]);
                     if (itemDropped){
-                        System.out.println("you dropped " + command[1]);
+                        System.out.println("you dropped the " + command[1]);
                     }else {
                         System.out.println(command[1] + " is not in your inventory.");
                     }
@@ -51,13 +51,24 @@ public class UserInterface {
                 case "help" -> System.out.println("""
                                                 
                                                 COMMANDS:
-                                                
-                                                go north
-                                                go south
-                                                go east
-                                                go west
-                                                look
-                                                exit
+                                                Go:
+                                                    Will let you go in the following directions if possible:
+                                                    north, south, east, west (or: n, s, e, w )
+                                                                                            
+                                                Look:
+                                                    Display the contents of the room if possible.
+                                                    
+                                                Take:
+                                                    Takes an item from the room and puts it in the player inventory.
+                                                    
+                                                Drop:
+                                                    Takes an item from the player inventory and puts it in the room.
+                                                    
+                                                Inventory (inv):
+                                                    Display the contents of the player inventory.
+                                                 
+                                                Exit:
+                                                    Ends the game.
                                                 
                                                 """);
 
