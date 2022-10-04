@@ -30,23 +30,28 @@ public class Map {
         setDirection(room8, room5, null, room9, room7);
         setDirection(room9, room6, null, null, room8);
 
-        addItemsToRoom(room1, "Flashlight", "A blue plastic flashlight.");
-        addItemsToRoom(room2, "Bucket", "A rusty old metal bucket.");
-        addItemsToRoom(room3, "Mirror", "A small mirror.");
-        addItemsToRoom(room4, "Fork", "A silver fork.");
-        addItemsToRoom(room5, "Crank", "A heavy metal crank.");
-        addItemsToRoom(room6, "Note", "A piece of paper, with a note on it.");
-        addItemsToRoom(room7, "Cup", "A paper cup.");
-        addItemsToRoom(room8, "Umbrella", "An umbrella.");
-        addItemsToRoom(room9, "Ballpen", "A black plastic ballpen.");
+        addItemToRoom(room1, "Flashlight", "A blue plastic flashlight.");
+        addItemToRoom(room2, "Bucket", "A rusty old metal bucket.");
+        addItemToRoom(room3, "Mirror", "A small mirror.");
+        addItemToRoom(room4, "Fork", "A silver fork.");
+        addItemToRoom(room5, "Crank", "A heavy metal crank.");
+        addItemToRoom(room6, "Note", "A piece of paper, with a note on it.");
+        addItemToRoom(room7, "Cup", "A paper cup.");
+        addItemToRoom(room8, "Umbrella", "An umbrella.");
+        addItemToRoom(room9, "Ballpen", "A black plastic ballpen.");
+
+        addFoodToRoom(room1, "Apple", "A red delicious apple", 50);
     }
 
     public Room getRoom1() {
         return room1;
     }
 
-    public void addItemsToRoom(Room room, String itemName, String description){
+    public void addItemToRoom(Room room, String itemName, String description){
         room.addItem(new Item(itemName, description));
+    }
+    public void addFoodToRoom(Room room, String itemName, String description, int healthPoint){
+        room.addItem(new Food(itemName, description, healthPoint));
     }
 
     public void setDirection(Room room, Room north, Room south, Room east, Room west){

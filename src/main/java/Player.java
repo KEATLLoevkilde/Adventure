@@ -53,6 +53,11 @@ public class Player {
         return goingInDirection;
     }
 
+    // TODO: 04-10-2022 setHealth
+//    public void setHealth(Item item) {
+//        this.health = item.getHealth;
+//    }
+
     public String printHealthDescription(){
         String str = "";
         if (health > 0 && health <= 25){
