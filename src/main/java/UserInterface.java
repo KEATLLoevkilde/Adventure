@@ -45,6 +45,7 @@ public class UserInterface {
                 }
 
                 case "inventory", "inv" -> System.out.println(adventure.printInventory());
+                case "health" -> System.out.println(adventure.printPlayerHealth());
                 case "eat", "drink" -> {
                     ReturnMessage result = adventure.eatItem(command[1]);
                     switch (result){
@@ -53,7 +54,6 @@ public class UserInterface {
                         case CAN_NOT_BE_EATEN -> System.out.println(command[1] + " can not be eaten");
                     }
                 }
-                case "health" -> System.out.println(adventure.printPlayerHealth());
                 case "look" -> System.out.println(adventure.getCurrentRoom());
                 case "help" -> System.out.println("""
                                                 
@@ -69,7 +69,9 @@ public class UserInterface {
                                                     
                                                 Inventory (inv): Display the contents of the player inventory. 
                                                 
-                                                Health: Display player health.                                                   
+                                                Health: Display player health. 
+                                                
+                                                Eat / Drink: Eat or drink food from your inventory to gain or lose health points.                                                  
                                                  
                                                 Exit: Ends the game.                                                  
                                                 

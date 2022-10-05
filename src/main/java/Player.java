@@ -13,14 +13,15 @@ public class Player {
         this.healthDescription = printHealthDescription();
     }
 
+    //CurrentRoom
     public Room getCurrentRoom() {
         return currentRoom;
     }
-
     public void setCurrentRoom(Room newCurrentRoom) {
         this.currentRoom = newCurrentRoom;
     }
 
+    //Go
     public boolean go(String direction){
         boolean goingInDirection = false;
         Room newCurrentRoom = null;
@@ -63,6 +64,7 @@ public class Player {
         healthDescription = printHealthDescription();
     }
 
+    //Health
     public String printHealthDescription(){
         String str = "";
         if (health > 0 && health <= 25){
@@ -80,6 +82,8 @@ public class Player {
     public String printPlayerHealth(){
         return "Player health:\n" + health + " - " + healthDescription;
     }
+
+    //Inventory
     public void addItemToInventory(Item item){
         inventory.add(item);
     }
