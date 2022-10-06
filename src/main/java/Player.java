@@ -179,10 +179,16 @@ public class Player {
         return equippedWeapon;
     }
     public ReturnMessage attack(){
-        if(equippedWeapon instanceof RangedWeapon){
+        ReturnMessage message = null;
+        if(!weaponEquipped()){
+            message = ReturnMessage.NO_WEAPON_EQUIPPED;
+        } else if(equippedWeapon instanceof RangedWeapon){
             int usesLeft = ((RangedWeapon) equippedWeapon).getUses();
             ((RangedWeapon) equippedWeapon).setUses(usesLeft - 1);
+            message = ReturnMessage.ENEMY_ATTACKED;
+        } else {
+            message = ReturnMessage.ENEMY_ATTACKED;
         }
-        return ReturnMessage.ENEMY_ATTACKED;
+        return message;
     }
 }

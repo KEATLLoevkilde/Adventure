@@ -76,6 +76,7 @@ public class UserInterface {
                 case "attack" ->{
                     ReturnMessage message = adventure.attack();
                     switch(message){
+                        case NO_WEAPON_EQUIPPED -> System.out.println("You can not attack without a weapon equipped");
                         case ENEMY_ATTACKED -> System.out.println("Enemy attacked");
                     }
                 }
