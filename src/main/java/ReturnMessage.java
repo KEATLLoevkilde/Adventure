@@ -3,5 +3,8 @@ public enum ReturnMessage {
         CAN_NOT_BE_EATEN,
         EATEN,
         IS_NOT_A_WEAPON,
-        EQUIPPED
+        EQUIPPED,
+        ENEMY_ATTACKED,
+        WEAPON_OUT_OF_AMMO,
+        NO_WEAPON_EQUIPPED
 }

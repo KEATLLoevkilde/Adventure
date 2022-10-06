@@ -47,4 +47,8 @@ public class Adventure {
         return player.getEquippedWeapon();
     }
 
+    public ReturnMessage attack(){
+        return player.attack();
+    }
+
 }

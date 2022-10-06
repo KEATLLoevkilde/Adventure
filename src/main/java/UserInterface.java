@@ -73,6 +73,12 @@ public class UserInterface {
                         case EQUIPPED -> System.out.println(command[1] + " equipped");
                     }
                 }
+                case "attack" ->{
+                    ReturnMessage message = adventure.attack();
+                    switch(message){
+                        case ENEMY_ATTACKED -> System.out.println("Enemy attacked");
+                    }
+                }
                 case "look" -> System.out.println(adventure.getCurrentRoom());
                 case "help" -> System.out.println("""
                                                 

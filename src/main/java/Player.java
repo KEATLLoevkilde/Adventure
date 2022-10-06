@@ -178,4 +178,11 @@ public class Player {
     public Weapon getEquippedWeapon() {
         return equippedWeapon;
     }
+    public ReturnMessage attack(){
+        if(equippedWeapon instanceof RangedWeapon){
+            int usesLeft = ((RangedWeapon) equippedWeapon).getUses();
+            ((RangedWeapon) equippedWeapon).setUses(usesLeft - 1);
+        }
+        return ReturnMessage.ENEMY_ATTACKED;
+    }
 }

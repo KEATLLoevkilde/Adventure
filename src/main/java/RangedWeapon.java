@@ -5,4 +5,12 @@ public class RangedWeapon extends Weapon{
         super(name, description, damage);
         this.uses = uses;
     }
+
+    public int getUses() {
+        return uses;
+    }
+
+    public void setUses(int uses) {
+        this.uses = uses;
+    }
 }
