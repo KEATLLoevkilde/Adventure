@@ -110,14 +110,15 @@ public class Player {
     }
 
     public void removeItemFromInventory(Item item){
-        int index = -1;
-        for (int i = 0; i < inventory.size(); i++) {
+        int startIndex = inventory.size() - 1;
+        for (int i = startIndex; i >= 0 ; i--) {
             if (inventory.get(i) == item){
-                index = i;
+                inventory.remove(i);
+                break;
             }
         }
-        inventory.remove(index);
     }
+
     public boolean takeItem(String itemName){
         boolean takeItem = false;
         Item requiredItem = currentRoom.searchItem(itemName);

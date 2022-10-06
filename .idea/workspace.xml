@@ -4,10 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="41b819ed-f6c7-4518-a389-ca201f89dcb4" name="Changes" comment="Delopgave 3.2.3">
+    <list default="true" id="41b819ed-f6c7-4518-a389-ca201f89dcb4" name="Changes" comment="Delopgave 3.2.3&#10;Added eat/drink to Help in UI">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Player.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/UserInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/UserInterface.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Room.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Room.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -56,7 +56,8 @@
       <workItem from="1664865974001" duration="10964000" />
       <workItem from="1664878931181" duration="10576000" />
       <workItem from="1664951420483" duration="631000" />
-      <workItem from="1664959273101" duration="1427000" />
+      <workItem from="1664959273101" duration="1557000" />
+      <workItem from="1665052232722" duration="440000" />
     </task>
     <task id="LOCAL-00001" summary="Delopgave 2&#10;fixed deleteItemFromRoom() and deleteItemFromInventory()">
       <created>1664475782748</created>
@@ -156,7 +157,14 @@
       <option name="project" value="LOCAL" />
       <updated>1664889079299</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="Delopgave 3.2.3&#10;Added eat/drink to Help in UI">
+      <created>1664960753165</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1664960753165</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -189,6 +197,7 @@
     <MESSAGE value="Delopgave 3.2.1" />
     <MESSAGE value="Delopgave 3.2.2" />
     <MESSAGE value="Delopgave 3.2.3" />
-    <option name="LAST_COMMIT_MESSAGE" value="Delopgave 3.2.3" />
+    <MESSAGE value="Delopgave 3.2.3&#10;Added eat/drink to Help in UI" />
+    <option name="LAST_COMMIT_MESSAGE" value="Delopgave 3.2.3&#10;Added eat/drink to Help in UI" />
   </component>
 </project>

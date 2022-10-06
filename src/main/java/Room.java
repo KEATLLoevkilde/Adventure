@@ -67,13 +67,13 @@ public class Room {
     }
 
     public void removeItemFromRoom(Item item){
-        int index = -1;
-        for (int i = 0; i < items.size(); i++) {
+        int startIndex = items.size() - 1;
+        for (int i = startIndex; i >= 0 ; i--) {
             if (items.get(i) == item){
-                index = i;
+                items.remove(i);
+                break;
             }
         }
-        items.remove(index);
     }
 
     public String toString() {
