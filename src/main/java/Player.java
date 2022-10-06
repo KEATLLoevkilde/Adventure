@@ -104,7 +104,7 @@ public class Player {
             } else {
                 str += "Inventory:";
                 for (Item i: inventory) {
-                    str += '\n' + i.getDescription();
+                    str += '\n' + i.toString();
                 }
             }
             return str;
@@ -158,6 +158,7 @@ public class Player {
         }
     }
 
+    //Weapon methods
     public ReturnMessage equipWeapon(String weaponName){
         Item weaponRequired = searchItemInInventory(weaponName);
         if(weaponRequired == null){
@@ -178,15 +179,21 @@ public class Player {
     public Weapon getEquippedWeapon() {
         return equippedWeapon;
     }
+
     public ReturnMessage attack(){
         ReturnMessage message = null;
         if(!weaponEquipped()){
             message = ReturnMessage.NO_WEAPON_EQUIPPED;
-        } else if(equippedWeapon instanceof RangedWeapon){
+        } else if(equippedWeapon instanceof RangedWeapon){     //Ranged weapon
             int usesLeft = ((RangedWeapon) equippedWeapon).getUses();
             ((RangedWeapon) equippedWeapon).setUses(usesLeft - 1);
-            message = ReturnMessage.ENEMY_ATTACKED;
-        } else {
+            if(usesLeft > 0){
+                message = ReturnMessage.ENEMY_ATTACKED;
+            } else {
+                message = ReturnMessage.WEAPON_OUT_OF_AMMO;
+            }
+
+        } else {                                              //Melee weapon
             message = ReturnMessage.ENEMY_ATTACKED;
         }
         return message;

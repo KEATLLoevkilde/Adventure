@@ -13,4 +13,8 @@ public class RangedWeapon extends Weapon{
     public void setUses(int uses) {
         this.uses = uses;
     }
+    @Override
+    public String toString(){
+        return super.toString() + " - Shots left: " + uses;
+    }
 }

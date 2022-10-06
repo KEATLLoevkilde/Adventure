@@ -77,7 +77,9 @@ public class UserInterface {
                     ReturnMessage message = adventure.attack();
                     switch(message){
                         case NO_WEAPON_EQUIPPED -> System.out.println("You can not attack without a weapon equipped");
+                        case WEAPON_OUT_OF_AMMO -> System.out.println("No more ammo.");
                         case ENEMY_ATTACKED -> System.out.println("Enemy attacked");
+
                     }
                 }
                 case "look" -> System.out.println(adventure.getCurrentRoom());
