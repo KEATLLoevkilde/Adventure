@@ -43,17 +43,29 @@ public class Map {
         addFoodToRoom(room1, "Apple", "A red delicious apple", 50);
         addFoodToRoom(room9, "Poison", "A bottle of poison", -30);
         addFoodToRoom(room2, "Poison", "A bottle of poison", -30);
+
+        addRangedWeapon(room1, "Shotgun", "An old double barreled shotgun", 50, 2);
+
+        addMeleeWeapon(room1, "Dagger", "A shiny antique dagger", 10);
     }
 
     public Room getRoom1() {
         return room1;
     }
 
+    //Add methods
     public void addItemToRoom(Room room, String itemName, String description){
         room.addItem(new Item(itemName, description));
     }
     public void addFoodToRoom(Room room, String itemName, String description, int healthPoint){
         room.addItem(new Food(itemName, description, healthPoint));
+    }
+
+    public void addRangedWeapon(Room room, String name, String description, int damage, int uses){
+        room.addItem(new RangedWeapon(name, description, damage, uses));
+    }
+    public void addMeleeWeapon(Room room, String name, String description, int damage){
+        room.addItem(new MeleeWeapon(name, description, damage));
     }
 
     public void setDirection(Room room, Room north, Room south, Room east, Room west){

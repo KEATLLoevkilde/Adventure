@@ -4,10 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="41b819ed-f6c7-4518-a389-ca201f89dcb4" name="Changes" comment="Delopgave 3.2.3&#10;Added eat/drink to Help in UI">
+    <list default="true" id="41b819ed-f6c7-4518-a389-ca201f89dcb4" name="Changes" comment="Delopgave 3.2.3&#10;changed removeItemFromInventory &amp; removeItemFromRoom">
+      <change afterPath="$PROJECT_DIR$/src/main/java/MeleeWeapon.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/RangedWeapon.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Weapon.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Player.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Room.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Room.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Map.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Map.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ReturnMessage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ReturnMessage.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -17,8 +20,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="Enum" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -57,7 +60,7 @@
       <workItem from="1664878931181" duration="10576000" />
       <workItem from="1664951420483" duration="631000" />
       <workItem from="1664959273101" duration="1557000" />
-      <workItem from="1665052232722" duration="440000" />
+      <workItem from="1665052232722" duration="3460000" />
     </task>
     <task id="LOCAL-00001" summary="Delopgave 2&#10;fixed deleteItemFromRoom() and deleteItemFromInventory()">
       <created>1664475782748</created>
@@ -164,7 +167,14 @@
       <option name="project" value="LOCAL" />
       <updated>1664960753165</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="Delopgave 3.2.3&#10;changed removeItemFromInventory &amp; removeItemFromRoom">
+      <created>1665052734157</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1665052734157</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -198,6 +208,7 @@
     <MESSAGE value="Delopgave 3.2.2" />
     <MESSAGE value="Delopgave 3.2.3" />
     <MESSAGE value="Delopgave 3.2.3&#10;Added eat/drink to Help in UI" />
-    <option name="LAST_COMMIT_MESSAGE" value="Delopgave 3.2.3&#10;Added eat/drink to Help in UI" />
+    <MESSAGE value="Delopgave 3.2.3&#10;changed removeItemFromInventory &amp; removeItemFromRoom" />
+    <option name="LAST_COMMIT_MESSAGE" value="Delopgave 3.2.3&#10;changed removeItemFromInventory &amp; removeItemFromRoom" />
   </component>
 </project>
