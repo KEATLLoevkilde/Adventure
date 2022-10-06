@@ -1,3 +1,4 @@
+import java.sql.SQLOutput;
 import java.util.Scanner;
 public class UserInterface {
     private Adventure adventure;
@@ -44,14 +45,32 @@ public class UserInterface {
                     }
                 }
 
-                case "inventory", "inv" -> System.out.println(adventure.printInventory());
+                case "inventory", "inv" -> {
+                    boolean weaponEquipped = adventure.weaponEquipped();
+                    if(weaponEquipped){
+                        System.out.println(adventure.printInventory());
+                        System.out.println("\nEquipped weapon: " + adventure.getEquippedWeapon());
+                    }else{
+                        System.out.println(adventure.printInventory());
+                        System.out.println("\nNo weapon equipped.");
+                    }
+
+                }
                 case "health" -> System.out.println(adventure.printPlayerHealth());
                 case "eat", "drink" -> {
-                    ReturnMessage result = adventure.eatItem(command[1]);
-                    switch (result){
+                    ReturnMessage message = adventure.eatItem(command[1]);
+                    switch (message){
                         case COULD_NOT_BE_FOUND -> System.out.println(command[1] + " is not in your inventory.");
-                        case EATEN -> System.out.println(command[1] + " eaten");
                         case CAN_NOT_BE_EATEN -> System.out.println(command[1] + " can not be eaten");
+                        case EATEN -> System.out.println(command[1] + " eaten");
+                    }
+                }
+                case "equip" -> {
+                    ReturnMessage message = adventure.equipWeapon(command[1]);
+                    switch (message){
+                        case COULD_NOT_BE_FOUND -> System.out.println(command[1] + " is not in your inventory.");
+                        case IS_NOT_A_WEAPON -> System.out.println(command[1] + " is not a weapon");
+                        case EQUIPPED -> System.out.println(command[1] + " equipped");
                     }
                 }
                 case "look" -> System.out.println(adventure.getCurrentRoom());
@@ -71,7 +90,9 @@ public class UserInterface {
                                                 
                                                 Health: Display player health. 
                                                 
-                                                Eat / Drink: Eat or drink food from your inventory to gain or lose health points.                                                  
+                                                Eat / Drink: Eat or drink food from your inventory to gain or lose health points. 
+                                                
+                                                Equip: Equip a weapon from your inventory.                                                 
                                                  
                                                 Exit: Ends the game.                                                  
                                                 

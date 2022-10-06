@@ -37,5 +37,14 @@ public class Adventure {
     public ReturnMessage eatItem(String itemName){
         return player.eatItem(itemName);
     }
+    public ReturnMessage equipWeapon(String weaponName){
+        return player.equipWeapon(weaponName);
+    }
+    public boolean weaponEquipped(){
+        return player.weaponEquipped();
+    }
+    public Weapon getEquippedWeapon(){
+        return player.getEquippedWeapon();
+    }
 
 }

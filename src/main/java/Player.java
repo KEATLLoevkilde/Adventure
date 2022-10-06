@@ -5,6 +5,7 @@ public class Player {
     private ArrayList<Item> inventory;
     private int health;
     private String healthDescription;
+    private Weapon equippedWeapon;
 
     public Player(){
         currentRoom = new Room(null, null);
@@ -138,6 +139,9 @@ public class Player {
             removeItemFromInventory(requiredItem);
             dropItem = true;
         }
+        if(requiredItem == equippedWeapon){
+            equippedWeapon = null;
+        }
         return dropItem;
     }
 
@@ -145,7 +149,7 @@ public class Player {
         Item itemRequired = searchItemInInventory(itemName);
         if(itemRequired == null){
             return ReturnMessage.COULD_NOT_BE_FOUND;
-        } else if(itemRequired instanceof Food food){
+        } else if(itemRequired instanceof Food){
             setHealth(itemRequired);
             removeItemFromInventory(itemRequired);
             return ReturnMessage.EATEN;
@@ -154,4 +158,24 @@ public class Player {
         }
     }
 
+    public ReturnMessage equipWeapon(String weaponName){
+        Item weaponRequired = searchItemInInventory(weaponName);
+        if(weaponRequired == null){
+            return ReturnMessage.COULD_NOT_BE_FOUND;
+        } else if(weaponRequired instanceof Weapon){
+            equippedWeapon = (Weapon) weaponRequired;
+            return ReturnMessage.EQUIPPED;
+        } else {
+            return ReturnMessage.IS_NOT_A_WEAPON;
+        }
+    }
+    public boolean weaponEquipped(){
+        if(equippedWeapon != null)
+            return true;
+        else
+            return false;
+    }
+    public Weapon getEquippedWeapon() {
+        return equippedWeapon;
+    }
 }
