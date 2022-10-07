@@ -30,8 +30,8 @@ public class UserInterface {
                     } else {
                         System.out.println("You did not indicate the direction to " + command[0]);
                     }
-
                 }
+
                 case "take" -> {
                     if(command.length > 1){
                         boolean itemTaken = adventure.takeItem(command[1]);
@@ -56,7 +56,6 @@ public class UserInterface {
                     }else {
                         System.out.println("You did not indicate the item to " + command[0]);
                     }
-
                 }
 
                 case "inventory", "inv" -> {
@@ -68,8 +67,8 @@ public class UserInterface {
                         System.out.println(adventure.printInventory());
                         System.out.println("\nNo weapon equipped.");
                     }
-
                 }
+
                 case "health" -> System.out.println(adventure.printPlayerHealth());
                 case "eat", "drink" -> {
                     if(command.length > 1){
@@ -83,6 +82,7 @@ public class UserInterface {
                         System.out.println("You did not indicate the item to " + command[0]);
                     }
                 }
+
                 case "equip" -> {
                     if(command.length > 1){
                         ReturnMessage message = adventure.equipWeapon(command[1]);
@@ -94,17 +94,17 @@ public class UserInterface {
                     }else {
                         System.out.println("You did not indicate the weapon to " + command[0]);
                     }
-
                 }
+
                 case "attack" ->{
                     ReturnMessage message = adventure.attack();
                     switch(message){
                         case NO_WEAPON_EQUIPPED -> System.out.println("You can not attack without a weapon equipped");
                         case WEAPON_OUT_OF_AMMO -> System.out.println("No more ammo.");
                         case ENEMY_ATTACKED -> System.out.println("Enemy attacked");
-
                     }
                 }
+
                 case "look" -> System.out.println(adventure.getCurrentRoom());
                 case "help" -> System.out.println("""
                                                 
@@ -129,7 +129,6 @@ public class UserInterface {
                                                 Exit: Ends the game.                                                  
                                                 
                                                 """);
-
 
                 case "exit" -> System.exit(0);
                 default-> System.out.println("Invalid request, try again.");

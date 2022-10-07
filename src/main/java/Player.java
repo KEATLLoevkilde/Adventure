@@ -109,7 +109,6 @@ public class Player {
             }
             return str;
     }
-
     public void removeItemFromInventory(Item item){
         int startIndex = inventory.size() - 1;
         for (int i = startIndex; i >= 0 ; i--) {
@@ -119,7 +118,6 @@ public class Player {
             }
         }
     }
-
     public boolean takeItem(String itemName){
         boolean takeItem = false;
         Item requiredItem = currentRoom.searchItem(itemName);
@@ -157,7 +155,6 @@ public class Player {
             return ReturnMessage.CAN_NOT_BE_EATEN;
         }
     }
-
     //Weapon methods
     public ReturnMessage equipWeapon(String weaponName){
         Item weaponRequired = searchItemInInventory(weaponName);
@@ -179,8 +176,6 @@ public class Player {
     public Weapon getEquippedWeapon() {
         return equippedWeapon;
     }
-
-    // TODO: 07-10-2022 No instanceof Ranged/Melee
     public ReturnMessage attack(){
         if(!weaponEquipped()){
             return ReturnMessage.NO_WEAPON_EQUIPPED;
