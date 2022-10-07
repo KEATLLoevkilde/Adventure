@@ -180,22 +180,12 @@ public class Player {
         return equippedWeapon;
     }
 
+    // TODO: 07-10-2022 No instanceof Ranged/Melee
     public ReturnMessage attack(){
-        ReturnMessage message = null;
         if(!weaponEquipped()){
-            message = ReturnMessage.NO_WEAPON_EQUIPPED;
-        } else if(equippedWeapon instanceof RangedWeapon){     //Ranged weapon
-            int usesLeft = ((RangedWeapon) equippedWeapon).getUses();
-            ((RangedWeapon) equippedWeapon).setUses(usesLeft - 1);
-            if(usesLeft > 0){
-                message = ReturnMessage.ENEMY_ATTACKED;
-            } else {
-                message = ReturnMessage.WEAPON_OUT_OF_AMMO;
-            }
-
-        } else {                                              //Melee weapon
-            message = ReturnMessage.ENEMY_ATTACKED;
+            return ReturnMessage.NO_WEAPON_EQUIPPED;
+        } else {
+            return equippedWeapon.use();
         }
-        return message;
     }
 }

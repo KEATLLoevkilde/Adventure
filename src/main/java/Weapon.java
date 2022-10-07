@@ -1,4 +1,4 @@
-public class Weapon extends Item{
+public abstract class Weapon extends Item{
     private int damage;
 
     public Weapon(String name, String description, int damage){
@@ -6,5 +6,6 @@ public class Weapon extends Item{
         this.damage = damage;
     }
 
+    public abstract ReturnMessage use();
 
 }

@@ -20,29 +20,43 @@ public class UserInterface {
 
             switch (command[0]) {
                 case "go" ->{
-                    boolean goingInDirection = adventure.go(command[1]);
-                    if(goingInDirection) {
-                        System.out.println(adventure.getCurrentRoom());
+                    if(command.length > 1){
+                        boolean goingInDirection = adventure.go(command[1]);
+                        if(goingInDirection) {
+                            System.out.println(adventure.getCurrentRoom());
+                        } else {
+                            System.out.println("You can't go that way!");
+                        }
                     } else {
-                        System.out.println("You can't go that way!");
+                        System.out.println("You did not indicate the direction to " + command[0]);
                     }
+
                 }
                 case "take" -> {
-                    boolean itemTaken = adventure.takeItem(command[1]);
-                    if (itemTaken) {
-                        System.out.println("You've taken the " + command[1]);
-                     } else {
-                        System.out.println(command[1] + " couldn't be found in this room");
+                    if(command.length > 1){
+                        boolean itemTaken = adventure.takeItem(command[1]);
+                        if (itemTaken) {
+                            System.out.println("You've taken the " + command[1]);
+                        } else {
+                            System.out.println(command[1] + " couldn't be found in this room");
+                        }
+                    }else {
+                        System.out.println("You did not indicate the item to " + command[0]);
                     }
                 }
 
                 case "drop" -> {
-                    boolean itemDropped = adventure.dropItem(command[1]);
-                    if (itemDropped){
-                        System.out.println("you dropped the " + command[1]);
+                    if(command.length > 1){
+                        boolean itemDropped = adventure.dropItem(command[1]);
+                        if (itemDropped){
+                            System.out.println("you dropped the " + command[1]);
+                        }else {
+                            System.out.println(command[1] + " is not in your inventory.");
+                        }
                     }else {
-                        System.out.println(command[1] + " is not in your inventory.");
+                        System.out.println("You did not indicate the item to " + command[0]);
                     }
+
                 }
 
                 case "inventory", "inv" -> {
@@ -58,20 +72,29 @@ public class UserInterface {
                 }
                 case "health" -> System.out.println(adventure.printPlayerHealth());
                 case "eat", "drink" -> {
-                    ReturnMessage message = adventure.eatItem(command[1]);
-                    switch (message){
-                        case COULD_NOT_BE_FOUND -> System.out.println(command[1] + " is not in your inventory.");
-                        case CAN_NOT_BE_EATEN -> System.out.println(command[1] + " can not be eaten");
-                        case EATEN -> System.out.println(command[1] + " eaten");
+                    if(command.length > 1){
+                        ReturnMessage message = adventure.eatItem(command[1]);
+                        switch (message){
+                            case COULD_NOT_BE_FOUND -> System.out.println(command[1] + " is not in your inventory.");
+                            case CAN_NOT_BE_EATEN -> System.out.println(command[1] + " can not be eaten");
+                            case EATEN -> System.out.println(command[1] + " eaten");
+                        }
+                    }else {
+                        System.out.println("You did not indicate the item to " + command[0]);
                     }
                 }
                 case "equip" -> {
-                    ReturnMessage message = adventure.equipWeapon(command[1]);
-                    switch (message){
-                        case COULD_NOT_BE_FOUND -> System.out.println(command[1] + " is not in your inventory.");
-                        case IS_NOT_A_WEAPON -> System.out.println(command[1] + " is not a weapon");
-                        case EQUIPPED -> System.out.println(command[1] + " equipped");
+                    if(command.length > 1){
+                        ReturnMessage message = adventure.equipWeapon(command[1]);
+                        switch (message){
+                            case COULD_NOT_BE_FOUND -> System.out.println(command[1] + " is not in your inventory.");
+                            case IS_NOT_A_WEAPON -> System.out.println(command[1] + " is not a weapon");
+                            case EQUIPPED -> System.out.println(command[1] + " equipped");
+                        }
+                    }else {
+                        System.out.println("You did not indicate the weapon to " + command[0]);
                     }
+
                 }
                 case "attack" ->{
                     ReturnMessage message = adventure.attack();

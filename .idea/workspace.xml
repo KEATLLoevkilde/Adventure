@@ -4,11 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="41b819ed-f6c7-4518-a389-ca201f89dcb4" name="Changes" comment="Delopgave 4.4">
+    <list default="true" id="41b819ed-f6c7-4518-a389-ca201f89dcb4" name="Changes" comment="Delopgave 4.5">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/MeleeWeapon.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MeleeWeapon.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Player.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/RangedWeapon.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/RangedWeapon.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/UserInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/UserInterface.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Weapon.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Weapon.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,7 +60,8 @@
       <workItem from="1664878931181" duration="10576000" />
       <workItem from="1664951420483" duration="631000" />
       <workItem from="1664959273101" duration="1557000" />
-      <workItem from="1665052232722" duration="10071000" />
+      <workItem from="1665052232722" duration="10325000" />
+      <workItem from="1665124472940" duration="3438000" />
     </task>
     <task id="LOCAL-00001" summary="Delopgave 2&#10;fixed deleteItemFromRoom() and deleteItemFromInventory()">
       <created>1664475782748</created>
@@ -200,7 +203,14 @@
       <option name="project" value="LOCAL" />
       <updated>1665063371450</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="Delopgave 4.5">
+      <created>1665064408021</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1665064408021</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -239,6 +249,7 @@
     <MESSAGE value="Delopgave 4.2" />
     <MESSAGE value="Delopgave 4.3" />
     <MESSAGE value="Delopgave 4.4" />
-    <option name="LAST_COMMIT_MESSAGE" value="Delopgave 4.4" />
+    <MESSAGE value="Delopgave 4.5" />
+    <option name="LAST_COMMIT_MESSAGE" value="Delopgave 4.5" />
   </component>
 </project>
