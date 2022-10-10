@@ -6,6 +6,13 @@ public abstract class Weapon extends Item{
         this.damage = damage;
     }
 
+    public int getDamage() {
+        return damage;
+    }
+
     public abstract ReturnMessage use();
+
+//    public abstract ReturnMessage usePlayer();
+//    public abstract ReturnMessage useEnemy();
 
 }

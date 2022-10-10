@@ -4,6 +4,7 @@ public class Adventure {
     private Map map;
     private Player player;
 
+
     public Adventure(){
         map = new Map();
         map.createMap();
@@ -13,6 +14,14 @@ public class Adventure {
 
     public Room getCurrentRoom(){
         return player.getCurrentRoom();
+    }
+
+    public int getPlayerHealth(){
+        return player.getPlayerHealth();
+    }
+
+    public int getCurrentEnemyHealth(){
+        return player.getCurrentEnemyHealth();
     }
 
     public String printInventory(){
@@ -47,8 +56,10 @@ public class Adventure {
         return player.getEquippedWeapon();
     }
 
-    public ReturnMessage attack(){
-        return player.attack();
+    public ReturnMessage attack(String enemyName){
+        return player.attack(enemyName);
     }
+
+
 
 }

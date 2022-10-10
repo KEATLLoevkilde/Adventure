@@ -9,8 +9,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="41b819ed-f6c7-4518-a389-ca201f89dcb4" name="Changes" comment="Delopgave 5&#10;added Enemy list and methods to Room">
-      <change beforePath="$PROJECT_DIR$/src/main/java/Map.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Map.java" afterDir="false" />
+    <list default="true" id="41b819ed-f6c7-4518-a389-ca201f89dcb4" name="Changes" comment="Delopgave 5&#10;added addMeleeEnemy &amp; addRangedEnemy to Map">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Adventure.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Adventure.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Enemy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Enemy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/MeleeWeapon.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MeleeWeapon.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Player.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/RangedWeapon.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/RangedWeapon.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ReturnMessage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ReturnMessage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Room.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Room.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/UserInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/UserInterface.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Weapon.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Weapon.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -67,7 +76,8 @@
       <workItem from="1665124472940" duration="8434000" />
       <workItem from="1665165916258" duration="522000" />
       <workItem from="1665383920165" duration="1266000" />
-      <workItem from="1665388510485" duration="3786000" />
+      <workItem from="1665388510485" duration="10580000" />
+      <workItem from="1665403787390" duration="7078000" />
     </task>
     <task id="LOCAL-00001" summary="Delopgave 2&#10;fixed deleteItemFromRoom() and deleteItemFromInventory()">
       <created>1664475782748</created>
@@ -251,7 +261,14 @@
       <option name="project" value="LOCAL" />
       <updated>1665396068580</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="Delopgave 5&#10;added addMeleeEnemy &amp; addRangedEnemy to Map">
+      <created>1665397232131</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1665397232131</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -269,7 +286,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Delopgave 2&#10;added takeItem() and dropItem() to Player.java" />
     <MESSAGE value="Delopgave 2&#10;refactor go()- metoderne" />
     <MESSAGE value="Delopgave 2&#10;refactor getCurrentRoom &amp; printInventory to Adventure.java" />
     <MESSAGE value="Delopgave 2&#10;Changed go- methods to one go-method." />
@@ -294,6 +310,7 @@
     <MESSAGE value="Delopgave 4.5&#10;added jar" />
     <MESSAGE value="Delopgave 5&#10;added Enemy class" />
     <MESSAGE value="Delopgave 5&#10;added Enemy list and methods to Room" />
-    <option name="LAST_COMMIT_MESSAGE" value="Delopgave 5&#10;added Enemy list and methods to Room" />
+    <MESSAGE value="Delopgave 5&#10;added addMeleeEnemy &amp; addRangedEnemy to Map" />
+    <option name="LAST_COMMIT_MESSAGE" value="Delopgave 5&#10;added addMeleeEnemy &amp; addRangedEnemy to Map" />
   </component>
 </project>

@@ -112,6 +112,13 @@ public class Room {
                 str += "\nThere is " + i.getDescription();
             }
         }
+        if(enemies.isEmpty()){
+            str += "\nNothing else of interest in here.";
+        } else {
+            for (Enemy e: enemies) {
+                str += "\nThere is " + e;
+            }
+        }
         return str;
     }
 }

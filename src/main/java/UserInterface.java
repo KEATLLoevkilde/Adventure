@@ -1,4 +1,5 @@
 import java.sql.SQLOutput;
+import java.util.Locale;
 import java.util.Scanner;
 public class UserInterface {
     private Adventure adventure;
@@ -97,12 +98,27 @@ public class UserInterface {
                 }
 
                 case "attack" ->{
-                    ReturnMessage message = adventure.attack();
-                    switch(message){
-                        case NO_WEAPON_EQUIPPED -> System.out.println("You can not attack without a weapon equipped");
-                        case WEAPON_OUT_OF_AMMO -> System.out.println("No more ammo.");
-                        case ENEMY_ATTACKED -> System.out.println("Enemy attacked");
-                    }
+                    if(command.length > 1) {
+                        ReturnMessage message = adventure.attack(command[1]);
+                        switch(message){
+                            case NO_WEAPON_EQUIPPED -> System.out.println("You can not attack without a weapon equipped");
+                            case NO_ENEMY_FOUND_BY_THAT_NAME -> System.out.println("No enemy like " + command[1] + " in the room");
+                            case PLAYER_WEAPON_OUT_OF_AMMO -> System.out.println("You are out of ammo.");
+                            case ENEMY_WEAPON_OUT_OF_AMMO -> System.out.println("Enemy is out of ammo");
+                            case ENEMY_KILLED -> System.out.println("Enemy killed");
+                            case PLAYER_ATTACKED -> {
+                                System.out.println("You survived, but so did the " + command[1]);
+                                System.out.println("Player health: " + adventure.getPlayerHealth());
+                                System.out.println(firstToUpperCase(command[1]) + " health: " + adventure.getCurrentEnemyHealth());
+                            }
+                            case PLAYER_DIED -> {
+                                System.out.println("GAME OVER\nYou were killed by the " + command[1]);
+                                System.exit(0);
+                            }
+                        }
+                    }else {
+                        System.out.println("You did not indicate the enemy to " + command[0]);
+                        }
                 }
 
                 case "look" -> System.out.println(adventure.getCurrentRoom());
@@ -134,6 +150,10 @@ public class UserInterface {
                 default-> System.out.println("Invalid request, try again.");
             }
         }
+    }
+    public static String firstToUpperCase(String str){
+        String capFirst = str.substring(0, 1).toUpperCase() + str.substring(1);
+        return capFirst;
     }
 
 }

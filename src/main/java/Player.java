@@ -6,12 +6,18 @@ public class Player {
     private int health;
     private String healthDescription;
     private Weapon equippedWeapon;
+    private Enemy currentEnemy;
 
     public Player(){
         currentRoom = new Room(null, null);
         inventory = new ArrayList<>();
         this.health = 100;
         this.healthDescription = printHealthDescription();
+        currentEnemy = new Enemy(null, null, 0, null);
+    }
+
+    public int getPlayerHealth() {
+        return health;
     }
 
     //CurrentRoom
@@ -20,6 +26,18 @@ public class Player {
     }
     public void setCurrentRoom(Room newCurrentRoom) {
         this.currentRoom = newCurrentRoom;
+    }
+
+    //Enemy
+    public int getCurrentEnemyHealth() {
+        return currentEnemy.getHealth();
+    }
+
+    public void setCurrentEnemy(String enemyName) {
+        Enemy requiredEnemy = currentRoom.searchEnemy(enemyName);
+        if (requiredEnemy != null){
+            this.currentEnemy = requiredEnemy;
+        }
     }
 
     //Go
@@ -176,13 +194,47 @@ public class Player {
     public Weapon getEquippedWeapon() {
         return equippedWeapon;
     }
-    public ReturnMessage attack(){
-        if(!weaponEquipped()){
+    public ReturnMessage attack(String enemyName){
+        setCurrentEnemy(enemyName);
+        if(!weaponEquipped()){                                                       //Player does not attack
             return ReturnMessage.NO_WEAPON_EQUIPPED;
-        } else {
-            return equippedWeapon.use();
+        }
+        if(currentRoom.searchEnemy(enemyName) == null){
+            return ReturnMessage.NO_ENEMY_FOUND_BY_THAT_NAME;
+        }
+        if(equippedWeapon.use() == ReturnMessage.WEAPON_OUT_OF_AMMO){
+            return ReturnMessage.PLAYER_WEAPON_OUT_OF_AMMO;
+        }else {                                                                       //Player attacks
+            currentEnemy.hit(equippedWeapon.getDamage());
+            if(currentEnemy.isAlive()){
+                if(currentEnemy.attack() == ReturnMessage.WEAPON_OUT_OF_AMMO){
+                    return ReturnMessage.ENEMY_WEAPON_OUT_OF_AMMO;
+                }else{
+                    hit();
+                    if(playerIsAlive()){
+                        return ReturnMessage.PLAYER_ATTACKED;
+                    } else{
+                        return ReturnMessage.PLAYER_DIED;
+                    }
+                }
+            }else{
+                currentRoom.addItem(currentEnemy.getWeapon());
+                currentRoom.removeEnemyFromRoom(currentEnemy);
+                return ReturnMessage.ENEMY_KILLED;
+            }
         }
     }
 
-    // TODO: 10-10-2022 searchEnemy()
+    public void hit(){
+        health -= currentEnemy.getWeapon().getDamage();
+        healthDescription = printHealthDescription();
+    }
+    public boolean playerIsAlive(){
+        if(health > 0){
+            return true;
+        } else{
+            return false;
+        }
+    }
+
 }
