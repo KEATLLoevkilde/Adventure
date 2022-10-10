@@ -44,9 +44,13 @@ public class Map {
         addFoodToRoom(room9, "Poison", "A bottle of poison", -30);
         addFoodToRoom(room2, "Poison", "A bottle of poison", -30);
 
-        addRangedWeapon(room1, "Shotgun", "An old double barreled shotgun", 50, 2);
+        addRangedWeapon(room1, "Shotgun", "An old double barreled shotgun", 100, 2);
 
         addMeleeWeapon(room1, "Dagger", "A shiny antique dagger", 10);
+
+        addMeleeEnemy(room1, "Troll", "A big ugly troll", 200, "Hammer", "A huge hammer", 50);
+
+        addRangedEnemy(room1, "Cowboy", "An evil looking cowboy in black", 100, "Revolver", "A black revolver", 25, 6);
     }
 
     public Room getRoom1() {
@@ -66,6 +70,14 @@ public class Map {
     }
     public void addMeleeWeapon(Room room, String name, String description, int damage){
         room.addItem(new MeleeWeapon(name, description, damage));
+    }
+
+    public void addMeleeEnemy(Room room, String name, String description, int health, String weaponName, String weaponDescription, int weaponDammage){
+        room.addEnemy(new Enemy(name, description, health, new MeleeWeapon(weaponName, weaponDescription, weaponDammage)));
+    }
+
+    public void addRangedEnemy(Room room, String name, String description, int health, String weaponName, String weaponDescription, int weaponDammage, int uses){
+        room.addEnemy(new Enemy(name, description, health, new RangedWeapon(weaponName, weaponDescription, weaponDammage, uses)));
     }
 
     public void setDirection(Room room, Room north, Room south, Room east, Room west){
