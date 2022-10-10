@@ -8,6 +8,7 @@ public class Room {
     private Room east;
     private Room west;
     private ArrayList<Item> items;
+    // TODO: 10-10-2022 ArrayList<Enemies> enemies
 
     public Room(String name, String description){
         this.name = name;
