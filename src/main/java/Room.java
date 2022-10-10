@@ -8,7 +8,8 @@ public class Room {
     private Room east;
     private Room west;
     private ArrayList<Item> items;
-    // TODO: 10-10-2022 ArrayList<Enemies> enemies
+    private ArrayList<Enemy> enemies;
+
 
     public Room(String name, String description){
         this.name = name;
@@ -17,7 +18,8 @@ public class Room {
         this.south = null;
         this.east = null;
         this.west = null;
-        items = new ArrayList<Item>();
+        items = new ArrayList<>();
+        enemies = new ArrayList<>();
     }
 
     //Gettere
@@ -59,9 +61,9 @@ public class Room {
         items.add(item);
     }
 
-    public Item searchItem(String item){
+    public Item searchItem(String itemName){
         for (Item s: items) {
-            if(s.getName().toLowerCase().equals(item))
+            if(s.getName().toLowerCase().equals(itemName))
                 return s;
         }
         return null;
@@ -72,6 +74,28 @@ public class Room {
         for (int i = startIndex; i >= 0 ; i--) {
             if (items.get(i) == item){
                 items.remove(i);
+                break;
+            }
+        }
+    }
+
+    public void addEnemy(Enemy enemy){
+        enemies.add(enemy);
+    }
+
+    public Enemy searchEnemy(String enemyName){
+        for (Enemy e: enemies) {
+            if(e.getName().toLowerCase().equals(enemyName))
+                return e;
+        }
+        return null;
+    }
+
+    public void removeEnemyFromRoom(Enemy enemy){
+        int startIndex = enemies.size() - 1;
+        for (int i = startIndex; i >= 0 ; i--) {
+            if (enemies.get(i) == enemy){
+                enemies.remove(i);
                 break;
             }
         }
