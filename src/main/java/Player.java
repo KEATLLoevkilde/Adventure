@@ -200,7 +200,7 @@ public class Player {
     //Combat
     public ReturnMessage attack(String enemyName){
         setCurrentEnemy(enemyName);
-        if(!weaponEquipped()){                                                       //Player does not attack
+        if(!weaponEquipped()){
             return ReturnMessage.NO_WEAPON_EQUIPPED;
         }
         if(currentRoom.searchEnemy(enemyName) == null){
@@ -208,7 +208,23 @@ public class Player {
         }
         if(equippedWeapon.use() == ReturnMessage.WEAPON_OUT_OF_AMMO){
             return ReturnMessage.PLAYER_WEAPON_OUT_OF_AMMO;
-        }else {                                                                       //Player attacks
+        }else
+            return attack();
+    }
+
+    public void hit(){
+        health -= currentEnemy.getWeapon().getDamage();
+        healthDescription = printHealthDescription();
+    }
+    public boolean playerIsAlive(){
+        if(health > 0){
+            return true;
+        } else{
+            return false;
+        }
+    }
+
+    private ReturnMessage attack(){
             currentEnemy.hit(equippedWeapon.getDamage());
             if(currentEnemy.isAlive()){
                 if(currentEnemy.attack() == ReturnMessage.WEAPON_OUT_OF_AMMO){
@@ -226,19 +242,6 @@ public class Player {
                 currentRoom.removeEnemyFromRoom(currentEnemy);
                 return ReturnMessage.ENEMY_KILLED;
             }
-        }
-    }
-
-    public void hit(){
-        health -= currentEnemy.getWeapon().getDamage();
-        healthDescription = printHealthDescription();
-    }
-    public boolean playerIsAlive(){
-        if(health > 0){
-            return true;
-        } else{
-            return false;
-        }
     }
 
 }

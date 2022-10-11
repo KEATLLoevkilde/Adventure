@@ -20,6 +20,10 @@ public class Enemy {
         return weapon;
     }
 
+    public void setWeapon(Weapon weapon) {
+        this.weapon = weapon;
+    }
+
     public int getHealth() {
         return health;
     }

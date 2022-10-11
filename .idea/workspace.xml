@@ -9,14 +9,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="41b819ed-f6c7-4518-a389-ca201f89dcb4" name="Changes" comment="Delopgave 5&#10;added ??? I lost count, but it works!">
+    <list default="true" id="41b819ed-f6c7-4518-a389-ca201f89dcb4" name="Changes" comment="Delopgave 5&#10;Clean up">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Enemy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Enemy.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/MeleeWeapon.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MeleeWeapon.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Map.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Map.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Player.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/RangedWeapon.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/RangedWeapon.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Room.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Room.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/UserInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/UserInterface.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Weapon.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Weapon.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -75,7 +74,10 @@
       <workItem from="1665383920165" duration="1266000" />
       <workItem from="1665388510485" duration="10580000" />
       <workItem from="1665403787390" duration="7256000" />
-      <workItem from="1665474700241" duration="1805000" />
+      <workItem from="1665474700241" duration="1893000" />
+      <workItem from="1665483528798" duration="406000" />
+      <workItem from="1665484054133" duration="1313000" />
+      <workItem from="1665491626541" duration="5231000" />
     </task>
     <task id="LOCAL-00001" summary="Delopgave 2&#10;fixed deleteItemFromRoom() and deleteItemFromInventory()">
       <created>1664475782748</created>
@@ -273,7 +275,14 @@
       <option name="project" value="LOCAL" />
       <updated>1665410962218</updated>
     </task>
-    <option name="localTasksCounter" value="29" />
+    <task id="LOCAL-00029" summary="Delopgave 5&#10;Clean up">
+      <created>1665476728515</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1665476728515</updated>
+    </task>
+    <option name="localTasksCounter" value="30" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -291,7 +300,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Delopgave 2&#10;refactor getCurrentRoom &amp; printInventory to Adventure.java" />
     <MESSAGE value="Delopgave 2&#10;Changed go- methods to one go-method." />
     <MESSAGE value="Delopgave 2&#10;added takeItem &amp; dropItem to Adventure.java" />
     <MESSAGE value="Delopgave 2&#10;Better toString in Room.java" />
@@ -316,6 +324,7 @@
     <MESSAGE value="Delopgave 5&#10;added Enemy list and methods to Room" />
     <MESSAGE value="Delopgave 5&#10;added addMeleeEnemy &amp; addRangedEnemy to Map" />
     <MESSAGE value="Delopgave 5&#10;added ??? I lost count, but it works!" />
-    <option name="LAST_COMMIT_MESSAGE" value="Delopgave 5&#10;added ??? I lost count, but it works!" />
+    <MESSAGE value="Delopgave 5&#10;Clean up" />
+    <option name="LAST_COMMIT_MESSAGE" value="Delopgave 5&#10;Clean up" />
   </component>
 </project>

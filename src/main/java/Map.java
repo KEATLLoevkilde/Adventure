@@ -45,12 +45,14 @@ public class Map {
         addFoodToRoom(room2, "Poison", "A bottle of poison", -30);
 
         addRangedWeapon(room1, "Shotgun", "An old double barreled shotgun", 100, 2);
-
         addMeleeWeapon(room1, "Dagger", "A shiny antique dagger", 10);
 
-        addMeleeEnemy(room1, "Troll", "A big ugly troll", 200, "Hammer", "A huge hammer", 50);
+        // TODO: 11-10-2022 Better addWeapon & addEnemy
+        Enemy troll = addEnemy(room1, "Troll", "A big ugly troll", 200, null);
+        addMeleeWeapon(troll, "Hammer", "A huge hammer", 50 );
 
-        addRangedEnemy(room1, "Cowboy", "An evil looking cowboy in black", 100, "Revolver", "A black revolver", 25, 6);
+        Enemy cowboy = addEnemy(room1, "Cowboy", "An evil looking cowboy in black", 100, null);
+        addRangedWeapon(cowboy, "Revolver", "A black revolver", 25, 6);
     }
 
     public Room getRoom1() {
@@ -72,13 +74,19 @@ public class Map {
         room.addItem(new MeleeWeapon(name, description, damage));
     }
 
-    public void addMeleeEnemy(Room room, String name, String description, int health, String weaponName, String weaponDescription, int weaponDammage){
-        room.addEnemy(new Enemy(name, description, health, new MeleeWeapon(weaponName, weaponDescription, weaponDammage)));
+    public void addRangedWeapon(Enemy enemy, String name, String description, int damage, int uses){
+        enemy.setWeapon(new RangedWeapon(name, description, damage, uses));
+    }
+    public void addMeleeWeapon(Enemy enemy, String name, String description, int damage){
+        enemy.setWeapon(new MeleeWeapon(name, description, damage));
     }
 
-    public void addRangedEnemy(Room room, String name, String description, int health, String weaponName, String weaponDescription, int weaponDammage, int uses){
-        room.addEnemy(new Enemy(name, description, health, new RangedWeapon(weaponName, weaponDescription, weaponDammage, uses)));
+    public Enemy addEnemy(Room room, String name, String description, int health, Weapon weapon){
+        Enemy enemy = new Enemy(name, description, health, weapon);
+        room.addEnemy(enemy);
+        return enemy;
     }
+
 
     public void setDirection(Room room, Room north, Room south, Room east, Room west){
         room.setNorth(north);
