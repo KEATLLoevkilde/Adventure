@@ -109,7 +109,7 @@ public class UserInterface {
                             case PLAYER_ATTACKED -> {
                                 System.out.println("You survived, but so did the " + command[1]);
                                 System.out.println("Player health: " + adventure.getPlayerHealth());
-                                System.out.println(firstToUpperCase(command[1]) + " health: " + adventure.getCurrentEnemyHealth());
+                                System.out.println(capFirst(command[1]) + " health: " + adventure.getCurrentEnemyHealth());
                             }
                             case PLAYER_DIED -> {
                                 System.out.println("GAME OVER\nYou were killed by the " + command[1]);
@@ -140,7 +140,9 @@ public class UserInterface {
                                                 
                                                 Eat / Drink: Eat or drink food from your inventory to gain or lose health points. 
                                                 
-                                                Equip: Equip a weapon from your inventory.                                                 
+                                                Equip: Equip a weapon from your inventory.       
+                                                
+                                                Attack: Attack enemy with equipped weapon. Enemy will make counter attack if still alive.                                          
                                                  
                                                 Exit: Ends the game.                                                  
                                                 
@@ -151,7 +153,7 @@ public class UserInterface {
             }
         }
     }
-    public static String firstToUpperCase(String str){
+    public static String capFirst(String str){
         String capFirst = str.substring(0, 1).toUpperCase() + str.substring(1);
         return capFirst;
     }

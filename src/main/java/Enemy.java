@@ -33,11 +33,11 @@ public class Enemy {
     }
 
     public boolean isAlive(){
-        if(health > 0){
+        if(health > 0)
             return true;
-        }else{
+        else
             return false;
-        }
+
     }
     @Override
     public String toString(){

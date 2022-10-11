@@ -12,7 +12,4 @@ public abstract class Weapon extends Item{
 
     public abstract ReturnMessage use();
 
-//    public abstract ReturnMessage usePlayer();
-//    public abstract ReturnMessage useEnemy();
-
 }

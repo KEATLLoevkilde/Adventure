@@ -16,10 +16,6 @@ public class Player {
         currentEnemy = new Enemy(null, null, 0, null);
     }
 
-    public int getPlayerHealth() {
-        return health;
-    }
-
     //CurrentRoom
     public Room getCurrentRoom() {
         return currentRoom;
@@ -73,15 +69,7 @@ public class Player {
         return goingInDirection;
     }
 
-    public void setHealth(Item item) {
-        if(item instanceof Food food){
-            this.health = health += ((Food) item).getHealthPoint();
-        }
-        if (health > 100){
-            health = 100;
-        }
-        healthDescription = printHealthDescription();
-    }
+
 
     //Health
     public String printHealthDescription(){
@@ -100,6 +88,20 @@ public class Player {
 
     public String printPlayerHealth(){
         return "Player health:\n" + health + " - " + healthDescription;
+    }
+
+    public int getPlayerHealth() {
+        return health;
+    }
+
+    public void setHealth(Item item) {
+        if(item instanceof Food food){
+            this.health = health += ((Food) item).getHealthPoint();
+        }
+        if (health > 100){
+            health = 100;
+        }
+        healthDescription = printHealthDescription();
     }
 
     //Inventory
@@ -194,6 +196,8 @@ public class Player {
     public Weapon getEquippedWeapon() {
         return equippedWeapon;
     }
+
+    //Combat
     public ReturnMessage attack(String enemyName){
         setCurrentEnemy(enemyName);
         if(!weaponEquipped()){                                                       //Player does not attack
