@@ -8,6 +8,8 @@ public class Map {
     private Room room7 = null;
     private Room room8 = null;
     private Room room9 = null;
+    private Enemy troll = null;
+    private Enemy cowboy = null;
 
     public void createMap(){
         room1 = new Room("Library", "Lots of books");
@@ -19,6 +21,15 @@ public class Map {
         room7 = new Room("Yard", "Birds are singing");
         room8 = new Room("Entrance Hall", "Wide and empty. Exept for an umbrella rack.");
         room9 = new Room("Reception", "Reception desk. No one here.");
+
+        troll = new Enemy("Troll", "A big ugly troll", 200, null);
+        addMeleeWeapon(troll, "Hammer", "A huge hammer", 50 );
+
+        cowboy = new Enemy("Cowboy", "An evil looking cowboy in black", 100, null);
+        addRangedWeapon(cowboy, "Revolver", "A black revolver", 25, 6);
+
+        addEnemy(room1, troll);
+        addEnemy(room1, cowboy);
 
         setDirection(room1, null, room4, room2, null);
         setDirection(room2, null, null, room3, room1);
@@ -46,13 +57,6 @@ public class Map {
 
         addRangedWeapon(room1, "Shotgun", "An old double barreled shotgun", 100, 2);
         addMeleeWeapon(room1, "Dagger", "A shiny antique dagger", 10);
-
-        // TODO: 11-10-2022 Better addWeapon & addEnemy
-        Enemy troll = addEnemy(room1, "Troll", "A big ugly troll", 200, null);
-        addMeleeWeapon(troll, "Hammer", "A huge hammer", 50 );
-
-        Enemy cowboy = addEnemy(room1, "Cowboy", "An evil looking cowboy in black", 100, null);
-        addRangedWeapon(cowboy, "Revolver", "A black revolver", 25, 6);
     }
 
     public Room getRoom1() {
@@ -81,10 +85,8 @@ public class Map {
         enemy.setWeapon(new MeleeWeapon(name, description, damage));
     }
 
-    public Enemy addEnemy(Room room, String name, String description, int health, Weapon weapon){
-        Enemy enemy = new Enemy(name, description, health, weapon);
+    public void addEnemy(Room room, Enemy enemy){
         room.addEnemy(enemy);
-        return enemy;
     }
 
 

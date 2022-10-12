@@ -45,6 +45,6 @@ public class Enemy {
     }
     @Override
     public String toString(){
-        return description + " - Enemy health: " + health;
+        return description;
     }
 }

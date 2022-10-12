@@ -1,5 +1,3 @@
-import java.sql.SQLOutput;
-import java.util.Locale;
 import java.util.Scanner;
 public class UserInterface {
     private Adventure adventure;
@@ -11,9 +9,6 @@ public class UserInterface {
     }
     public void start(){
         System.out.println(adventure.getCurrentRoom());
-        runGame();
-    }
-    public void runGame(){
         while (true) {
             System.out.println("\nWhat do you want to do?");
             String[] command = handleInput();
@@ -24,7 +19,7 @@ public class UserInterface {
                 case "drop" -> drop(command);
                 case "inventory", "inv" -> inventory();
                 case "health" -> health();
-                case "eat", "drink" -> food(command);
+                case "eat", "drink" -> eatDrink(command);
                 case "equip" -> equip(command);
                 case "attack" -> attack(command);
                 case "look" -> look();
@@ -34,7 +29,6 @@ public class UserInterface {
             }
         }
     }
-
 
     private void equip(String[] command) {
         if(command.length > 1){
@@ -53,6 +47,10 @@ public class UserInterface {
         String action = sc.nextLine().toLowerCase();
         String[] command = action.split(" ");
         return command;
+    }
+    private String capFirst(String str){
+        String capFirst = str.substring(0, 1).toUpperCase() + str.substring(1);
+        return capFirst;
     }
 
     private void go(String[] command){
@@ -74,7 +72,7 @@ public class UserInterface {
             if (itemTaken) {
                 System.out.println("You've taken the " + command[1]);
             } else {
-                System.out.println(command[1] + " couldn't be found in this room");
+                System.out.println(capFirst(command[1]) + " couldn't be found in this room");
             }
         }else {
             System.out.println("You did not indicate the item to " + command[0]);
@@ -87,7 +85,7 @@ public class UserInterface {
             if (itemDropped){
                 System.out.println("you dropped the " + command[1]);
             }else {
-                System.out.println(command[1] + " is not in your inventory.");
+                System.out.println(capFirst(command[1]) + " is not in your inventory.");
             }
         }else {
             System.out.println("You did not indicate the item to " + command[0]);
@@ -108,13 +106,13 @@ public class UserInterface {
     private void health(){
         System.out.println(adventure.printPlayerHealth());
     }
-    private void food(String[] command){
+    private void eatDrink(String[] command){
         if(command.length > 1){
             ReturnMessage message = adventure.eatItem(command[1]);
             switch (message){
-                case COULD_NOT_BE_FOUND -> System.out.println(command[1] + " is not in your inventory.");
-                case CAN_NOT_BE_EATEN -> System.out.println(command[1] + " can not be eaten");
-                case EATEN -> System.out.println(command[1] + " eaten");
+                case COULD_NOT_BE_FOUND -> System.out.println(capFirst(command[1]) + " is not in your inventory.");
+                case CAN_NOT_BE_EATEN -> System.out.println(capFirst(command[1]) + " can not be eaten");
+                case EATEN -> System.out.println(capFirst(command[1]) + " eaten");
             }
         }else {
             System.out.println("You did not indicate the item to " + command[0]);
@@ -177,8 +175,4 @@ public class UserInterface {
                                                 """);
     }
 
-    private String capFirst(String str){
-        String capFirst = str.substring(0, 1).toUpperCase() + str.substring(1);
-        return capFirst;
-    }
 }
