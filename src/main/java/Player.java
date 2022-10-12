@@ -1,12 +1,12 @@
 import java.util.ArrayList;
 
 public class Player {
-    private Room currentRoom;
-    private ArrayList<Item> inventory;
     private int health;
     private String healthDescription;
     private Weapon equippedWeapon;
     private Enemy currentEnemy;
+    private Room currentRoom;
+    private ArrayList<Item> inventory;
 
     public Player(){
         currentRoom = new Room(null, null);
@@ -72,7 +72,7 @@ public class Player {
 
 
     //Health
-    public String printHealthDescription(){
+    private String printHealthDescription(){
         String str = "";
         if (health > 0 && health <= 25){
             str = "Your health is low. Eat food or medicine to improove it.";
@@ -94,7 +94,7 @@ public class Player {
         return health;
     }
 
-    public void setHealth(Item item) {
+    private void setHealth(Item item) {
         if(item instanceof Food food){
             this.health = health += ((Food) item).getHealthPoint();
         }
@@ -105,11 +105,11 @@ public class Player {
     }
 
     //Inventory
-    public void addItemToInventory(Item item){
+    private void addItemToInventory(Item item){
         inventory.add(item);
     }
 
-    public Item searchItemInInventory(String itemName){
+    private Item searchItemInInventory(String itemName){
         for (Item s: inventory) {
             if(s.getName().toLowerCase().equals(itemName))
                 return s;
@@ -129,7 +129,7 @@ public class Player {
             }
             return str;
     }
-    public void removeItemFromInventory(Item item){
+    private void removeItemFromInventory(Item item){
         int startIndex = inventory.size() - 1;
         for (int i = startIndex; i >= 0 ; i--) {
             if (inventory.get(i) == item){
@@ -212,11 +212,31 @@ public class Player {
             return attack();
     }
 
-    public void hit(){
+    private ReturnMessage attack(){
+        currentEnemy.hit(equippedWeapon.getDamage());
+        if(currentEnemy.isAlive()){
+            if(currentEnemy.attack() == ReturnMessage.WEAPON_OUT_OF_AMMO){
+                return ReturnMessage.ENEMY_WEAPON_OUT_OF_AMMO;
+            }else{
+                hit();
+                if(playerIsAlive()){
+                    return ReturnMessage.PLAYER_ATTACKED;
+                } else{
+                    return ReturnMessage.PLAYER_DIED;
+                }
+            }
+        }else{
+            currentRoom.addItem(currentEnemy.getWeapon());
+            currentRoom.removeEnemyFromRoom(currentEnemy);
+            return ReturnMessage.ENEMY_KILLED;
+        }
+    }
+
+    private void hit(){
         health -= currentEnemy.getWeapon().getDamage();
         healthDescription = printHealthDescription();
     }
-    public boolean playerIsAlive(){
+    private boolean playerIsAlive(){
         if(health > 0){
             return true;
         } else{
@@ -224,24 +244,6 @@ public class Player {
         }
     }
 
-    private ReturnMessage attack(){
-            currentEnemy.hit(equippedWeapon.getDamage());
-            if(currentEnemy.isAlive()){
-                if(currentEnemy.attack() == ReturnMessage.WEAPON_OUT_OF_AMMO){
-                    return ReturnMessage.ENEMY_WEAPON_OUT_OF_AMMO;
-                }else{
-                    hit();
-                    if(playerIsAlive()){
-                        return ReturnMessage.PLAYER_ATTACKED;
-                    } else{
-                        return ReturnMessage.PLAYER_DIED;
-                    }
-                }
-            }else{
-                currentRoom.addItem(currentEnemy.getWeapon());
-                currentRoom.removeEnemyFromRoom(currentEnemy);
-                return ReturnMessage.ENEMY_KILLED;
-            }
-    }
+
 
 }

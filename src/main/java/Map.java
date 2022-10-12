@@ -41,19 +41,19 @@ public class Map {
         setDirection(room8, room5, null, room9, room7);
         setDirection(room9, room6, null, null, room8);
 
-        addItemToRoom(room1, "Flashlight", "A blue plastic flashlight.");
-        addItemToRoom(room2, "Bucket", "A rusty old metal bucket.");
-        addItemToRoom(room3, "Mirror", "A small mirror.");
-        addItemToRoom(room4, "Fork", "A silver fork.");
-        addItemToRoom(room5, "Crank", "A heavy metal crank.");
-        addItemToRoom(room6, "Note", "A piece of paper, with a note on it.");
-        addItemToRoom(room7, "Cup", "A paper cup.");
-        addItemToRoom(room8, "Umbrella", "An umbrella.");
-        addItemToRoom(room9, "Ballpen", "A black plastic ballpen.");
+        addItem(room1, "Flashlight", "A blue plastic flashlight.");
+        addItem(room2, "Bucket", "A rusty old metal bucket.");
+        addItem(room3, "Mirror", "A small mirror.");
+        addItem(room4, "Fork", "A silver fork.");
+        addItem(room5, "Crank", "A heavy metal crank.");
+        addItem(room6, "Note", "A piece of paper, with a note on it.");
+        addItem(room7, "Cup", "A paper cup.");
+        addItem(room8, "Umbrella", "An umbrella.");
+        addItem(room9, "Ballpen", "A black plastic ballpen.");
 
-        addFoodToRoom(room1, "Apple", "A red delicious apple", 50);
-        addFoodToRoom(room9, "Poison", "A bottle of poison", -30);
-        addFoodToRoom(room2, "Poison", "A bottle of poison", -30);
+        addFood(room1, "Apple", "A red delicious apple", 50);
+        addFood(room9, "Poison", "A bottle of poison", -30);
+        addFood(room2, "Poison", "A bottle of poison", -30);
 
         addRangedWeapon(room1, "Shotgun", "An old double barreled shotgun", 100, 2);
         addMeleeWeapon(room1, "Dagger", "A shiny antique dagger", 10);
@@ -63,38 +63,36 @@ public class Map {
         return room1;
     }
 
-    //Add methods
-    public void addItemToRoom(Room room, String itemName, String description){
-        room.addItem(new Item(itemName, description));
-    }
-    public void addFoodToRoom(Room room, String itemName, String description, int healthPoint){
-        room.addItem(new Food(itemName, description, healthPoint));
-    }
-
-    public void addRangedWeapon(Room room, String name, String description, int damage, int uses){
-        room.addItem(new RangedWeapon(name, description, damage, uses));
-    }
-    public void addMeleeWeapon(Room room, String name, String description, int damage){
-        room.addItem(new MeleeWeapon(name, description, damage));
-    }
-
-    public void addRangedWeapon(Enemy enemy, String name, String description, int damage, int uses){
-        enemy.setWeapon(new RangedWeapon(name, description, damage, uses));
-    }
-    public void addMeleeWeapon(Enemy enemy, String name, String description, int damage){
-        enemy.setWeapon(new MeleeWeapon(name, description, damage));
-    }
-
-    public void addEnemy(Room room, Enemy enemy){
-        room.addEnemy(enemy);
-    }
-
-
-    public void setDirection(Room room, Room north, Room south, Room east, Room west){
+    private void setDirection(Room room, Room north, Room south, Room east, Room west){
         room.setNorth(north);
         room.setSouth(south);
         room.setEast(east);
         room.setWest(west);
+    }
+    //Add methods
+    private void addItem(Room room, String itemName, String description){
+        room.addItem(new Item(itemName, description));
+    }
+    private void addFood(Room room, String itemName, String description, int healthPoint){
+        room.addItem(new Food(itemName, description, healthPoint));
+    }
+
+    private void addRangedWeapon(Room room, String name, String description, int damage, int uses){
+        room.addItem(new RangedWeapon(name, description, damage, uses));
+    }
+    private void addRangedWeapon(Enemy enemy, String name, String description, int damage, int uses){
+        enemy.setWeapon(new RangedWeapon(name, description, damage, uses));
+    }
+    private void addMeleeWeapon(Room room, String name, String description, int damage){
+        room.addItem(new MeleeWeapon(name, description, damage));
+    }
+
+    private void addMeleeWeapon(Enemy enemy, String name, String description, int damage){
+        enemy.setWeapon(new MeleeWeapon(name, description, damage));
+    }
+
+    private void addEnemy(Room room, Enemy enemy){
+        room.addEnemy(enemy);
     }
 
 }

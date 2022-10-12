@@ -30,18 +30,7 @@ public class UserInterface {
         }
     }
 
-    private void equip(String[] command) {
-        if(command.length > 1){
-            ReturnMessage message = adventure.equipWeapon(command[1]);
-            switch (message){
-                case COULD_NOT_BE_FOUND -> System.out.println(command[1] + " is not in your inventory.");
-                case IS_NOT_A_WEAPON -> System.out.println(command[1] + " is not a weapon");
-                case EQUIPPED -> System.out.println(command[1] + " equipped");
-            }
-        }else {
-            System.out.println("You did not indicate the weapon to " + command[0]);
-        }
-    }
+
 
     private String[] handleInput(){
         String action = sc.nextLine().toLowerCase();
@@ -106,6 +95,19 @@ public class UserInterface {
     private void health(){
         System.out.println(adventure.printPlayerHealth());
     }
+
+    private void equip(String[] command) {
+        if(command.length > 1){
+            ReturnMessage message = adventure.equipWeapon(command[1]);
+            switch (message){
+                case COULD_NOT_BE_FOUND -> System.out.println(command[1] + " is not in your inventory.");
+                case IS_NOT_A_WEAPON -> System.out.println(command[1] + " is not a weapon");
+                case EQUIPPED -> System.out.println(command[1] + " equipped");
+            }
+        }else {
+            System.out.println("You did not indicate the weapon to " + command[0]);
+        }
+    }
     private void eatDrink(String[] command){
         if(command.length > 1){
             ReturnMessage message = adventure.eatItem(command[1]);
@@ -149,30 +151,30 @@ public class UserInterface {
 
     private void help(){
         System.out.println("""
-                                                
-                                                COMMANDS:
-                                                Go: Will let you go in the following direction if possible:
-                                                    north, south, east, west (or: n, s, e, w )
-                                                                                            
-                                                Look: Display the contents of the room if possible.                                                    
-                                                    
-                                                Take: Takes an item from the room and puts it in the player inventory.                                                    
-                                                    
-                                                Drop: Takes an item from the player inventory and puts it in the room.                                                    
-                                                    
-                                                Inventory (inv): Display the contents of the player inventory. 
-                                                
-                                                Health: Display player health. 
-                                                
-                                                Eat / Drink: Eat or drink food from your inventory to gain or lose health points. 
-                                                
-                                                Equip: Equip a weapon from your inventory.       
-                                                
-                                                Attack: Attack enemy with equipped weapon. Enemy will make counter attack if still alive.                                          
-                                                 
-                                                Exit: Ends the game.                                                  
-                                                
-                                                """);
+                        
+                        COMMANDS:
+                        Go: Will let you go in the following direction if possible:
+                            north, south, east, west (or: n, s, e, w )
+                                                                    
+                        Look: Display the contents of the room if possible.                                                    
+                            
+                        Take: Takes an item from the room and puts it in the player inventory.                                                    
+                            
+                        Drop: Takes an item from the player inventory and puts it in the room.                                                    
+                            
+                        Inventory (inv): Display the contents of the player inventory. 
+                        
+                        Health: Display player health. 
+                        
+                        Eat / Drink: Eat or drink food from your inventory to gain or lose health points. 
+                        
+                        Equip: Equip a weapon from your inventory.       
+                        
+                        Attack: Attack enemy with equipped weapon. Enemy will make counter attack if still alive.                                          
+                         
+                        Exit: Ends the game.                                                  
+                        
+                        """);
     }
 
 }

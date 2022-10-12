@@ -39,10 +39,6 @@ public class Room {
         return west;
     }
 
-    public ArrayList<Enemy> getEnemies() {
-        return enemies;
-    }
-
     //Settere
 
     public void setNorth(Room northRoom) {
