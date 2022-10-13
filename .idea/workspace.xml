@@ -9,12 +9,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="41b819ed-f6c7-4518-a389-ca201f89dcb4" name="Changes" comment="Delopgave 5&#10;Cleanup">
+    <list default="true" id="41b819ed-f6c7-4518-a389-ca201f89dcb4" name="Changes" comment="Delopgave 5&#10;Cleanup + ClassDiagram">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Map.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Map.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Player.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Room.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Room.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/UserInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/UserInterface.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -78,7 +75,9 @@
       <workItem from="1665484054133" duration="1313000" />
       <workItem from="1665491626541" duration="5563000" />
       <workItem from="1665556082004" duration="6110000" />
-      <workItem from="1665568674284" duration="8957000" />
+      <workItem from="1665568674284" duration="9680000" />
+      <workItem from="1665643214404" duration="1629000" />
+      <workItem from="1665645525888" duration="664000" />
     </task>
     <task id="LOCAL-00001" summary="Delopgave 2&#10;fixed deleteItemFromRoom() and deleteItemFromInventory()">
       <created>1664475782748</created>
@@ -297,7 +296,14 @@
       <option name="project" value="LOCAL" />
       <updated>1665565232247</updated>
     </task>
-    <option name="localTasksCounter" value="32" />
+    <task id="LOCAL-00032" summary="Delopgave 5&#10;Cleanup + ClassDiagram">
+      <created>1665579663132</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1665579663132</updated>
+    </task>
+    <option name="localTasksCounter" value="33" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -315,7 +321,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Delopgave 2&#10;Better toString in Room.java" />
     <MESSAGE value="Delopgave 2&#10;Better printInventory in Player.java" />
     <MESSAGE value="Delopgave 2&#10;Better Help in UI." />
     <MESSAGE value="Delopgave 2&#10;Cleaned up all classes" />
@@ -340,6 +345,7 @@
     <MESSAGE value="Delopgave 5&#10;Clean up" />
     <MESSAGE value="Delopgave 5&#10;better UI&#10;better attack in Player" />
     <MESSAGE value="Delopgave 5&#10;Cleanup" />
-    <option name="LAST_COMMIT_MESSAGE" value="Delopgave 5&#10;Cleanup" />
+    <MESSAGE value="Delopgave 5&#10;Cleanup + ClassDiagram" />
+    <option name="LAST_COMMIT_MESSAGE" value="Delopgave 5&#10;Cleanup + ClassDiagram" />
   </component>
 </project>

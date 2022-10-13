@@ -29,7 +29,7 @@ public class Player {
         return currentEnemy.getHealth();
     }
 
-    public void setCurrentEnemy(String enemyName) {
+    private void setCurrentEnemy(String enemyName) {
         Enemy requiredEnemy = currentRoom.searchEnemy(enemyName);
         if (requiredEnemy != null){
             this.currentEnemy = requiredEnemy;
