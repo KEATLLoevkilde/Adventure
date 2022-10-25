@@ -109,7 +109,7 @@ public class Player {
         inventory.add(item);
     }
 
-    private Item searchItemInInventory(String itemName){
+    public Item searchItemInInventory(String itemName){
         for (Item s: inventory) {
             if(s.getName().toLowerCase().equals(itemName))
                 return s;
